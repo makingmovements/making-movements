@@ -1,0 +1,32 @@
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color: black;
+  line-height: 1.4;
+  max-width: 800px;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+nav {
+  margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.footer {
+  margin-top: 80px;
+  font-size: 12px;
+}
