@@ -1,81 +1,66 @@
 
-body {
-  margin: 0;
-  background: #ececeb;
-  color: #111;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.7;
-  font-size: 18px;
+body{
+  margin:0;
+  background:#e6e7e6;
+  color:#111;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.75;
 }
-
-.site {
-  max-width: 1400px;
-  margin: 0 auto;
+.site{
+  max-width:1500px;
+  margin:0 auto;
 }
-
-header {
-  padding: 40px 60px;
+header{
+  padding:24px 48px;
+  background-image:url('assets/concrete.jpg');
+  background-size:cover;
+  border-bottom:1px solid #bfc1bf;
 }
-
-.brand {
-  font-style: italic;
-  font-size: 28px;
-  margin-bottom: 24px;
+.brand{
+  font-style:italic;
+  font-size:16px;
+  margin-bottom:12px;
 }
-
-nav {
-  border-top: 1px solid #bdbdbd;
-  border-bottom: 1px solid #bdbdbd;
-  padding: 20px 0;
+nav a{
+  color:#111;
+  text-decoration:none;
+  margin-right:24px;
+  font-size:16px;
 }
-
-nav a {
-  color: #111;
-  text-decoration: none;
-  margin-right: 32px;
+.hero{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
 }
-
-.page-title {
-  padding: 80px 80px 40px 80px;
+.content{
+  max-width:760px;
+  padding:40px 80px 120px 80px;
 }
-
-.page-title h1 {
-  margin: 0;
-  font-size: 42px;
-  font-weight: 400;
+h1{
+  font-size:38px;
+  font-weight:400;
+  margin:40px 0 32px;
 }
-
-.hero {
-  width: calc(100% - 160px);
-  margin: 0 80px;
-  height: 340px;
-  object-fit: cover;
-  display: block;
+h2{
+  font-size:38px;
+  font-weight:400;
+  margin:40px 0 32px;
 }
-
-.content {
-  max-width: 760px;
-  padding: 40px 80px 120px 80px;
+.rule{
+  height:60px;
+  background-image:url('assets/concrete.jpg');
+  background-size:cover;
+  border-top:1px solid #c2c2c2;
+  border-bottom:1px solid #c2c2c2;
+  margin:80px 0;
 }
-
-.content h3 {
-  margin-top: 70px;
+.footer{
+  background-image:url('assets/concrete.jpg');
+  background-size:cover;
+  border-top:1px solid #bfc1bf;
+  padding:40px 48px 120px;
+  font-size:12px;
+  color:#444;
 }
-
-.rule {
-  height: 1px;
-  background: #bdbdbd;
-  margin: 80px 0;
-}
-
-.texture {
-  background-image: url("assets/concrete.jpg");
-  background-size: cover;
-}
-
-.footer {
-  border-top: 1px solid #bdbdbd;
-  padding: 40px 60px 120px;
-  font-size: 12px;
-  color: #666;
-}
+.tagline{font-style:italic;}
