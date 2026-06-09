@@ -2,7 +2,7 @@ body {
   background: #f5f4f1;
   color: #111;
   margin: 0;
-  font-family: "Courier New", monospace;
+  font-family: "Inter", system-ui, sans-serif;
   line-height: 1.7;
 }
 
