@@ -59,7 +59,6 @@ h1,h2{
 }
 
 .footer{
-  margin-top:80px;
   padding:40px 48px 120px;
   background-image:url('assets/concrete.jpg');
   background-size:cover;
@@ -101,5 +100,22 @@ h1,h2{
 .proposition p {
 
   margin: 16px 0;
+
+}
+.button {
+
+  display: inline-block;
+
+  margin-right: 16px;
+
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  border: 1px solid #111;
+
+  text-decoration: none;
+
+  color: #111;
 
 }
