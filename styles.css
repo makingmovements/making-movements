@@ -85,3 +85,21 @@ h1,h2{
   margin-top: 0;
 
 }
+.proposition {
+
+  border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
+
+  padding: 50px 0;
+
+  margin: 70px 0;
+
+  max-width: 500px;
+
+}
+
+.proposition p {
+
+  margin: 16px 0;
+
+}
