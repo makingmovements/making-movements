@@ -1,4 +1,12 @@
-<script>function copyEmail(b){navigator.clipboard.writeText("contact@makingmovements.world");b.innerText="email copied";setTimeout(()=>b.innerText="contact us",2000);}</script><html><head><link rel="stylesheet" href="styles.css"></head><body>
+<html><head><link rel="stylesheet" href="styles.css">
+<script>
+function copyEmail(btn){
+ navigator.clipboard.writeText('contact@makingmovements.world');
+ const t=btn.innerText;
+ btn.innerText='email copied';
+ setTimeout(()=>btn.innerText=t,2000);
+}
+</script></head><body>
 <header><nav>
 <a href="index.html">home</a>
 <a href="what-we-do.html">what we do</a>
@@ -28,7 +36,7 @@
 <p>get in touch via the email below to find out more.</p>
 
 <div class="connect">
-<button onclick="navigator.clipboard.writeText('contact us')">contact us</button>
+<button onclick="copyEmail(this)">contact us</button>
 </div>
 
 </div></body></html>

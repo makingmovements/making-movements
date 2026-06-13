@@ -1,4 +1,12 @@
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+<html><head><link rel="stylesheet" href="styles.css">
+<script>
+function copyEmail(btn){
+ navigator.clipboard.writeText('contact@makingmovements.world');
+ const t=btn.innerText;
+ btn.innerText='email copied';
+ setTimeout(()=>btn.innerText=t,2000);
+}
+</script></head><body>
 <header><nav>
 <a href="index.html">home</a>
 <a href="what-we-do.html">what we do</a>
@@ -25,7 +33,7 @@
 <div class="connect">
 <p>get in touch to find out more</p>
 <a class="button" href="https://instagram.com/makingmovements.world">instagram</a>
-<button onclick="navigator.clipboard.writeText('contact@makingmovements.world')">contact</button>
+<button onclick="copyEmail(this)">contact</button>
 </div>
 
 </div></body></html>
