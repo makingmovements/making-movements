@@ -85,3 +85,5 @@ display:flex;flex-direction:column;justify-content:flex-end;
 }
 .card:hover .overlay{opacity:1}
 .overlaylink{color:white;text-decoration:none}
+
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.connect .button{min-width:120px;text-align:center}
