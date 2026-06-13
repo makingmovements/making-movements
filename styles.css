@@ -72,8 +72,3 @@ h1,h2{
 .cardimg{width:100%;display:block;margin-bottom:20px}
 .card{padding:40px 0;border-top:1px solid #bbb}
 .footer{margin-top:0!important}
-
-.sketch-card{position:relative;cursor:pointer}
-.sketch-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);color:#fff;display:none;padding:20px}
-.sketch-card.active .sketch-overlay{display:block}
-.contact-box{border:1px solid #999;padding:24px;margin-top:40px}
