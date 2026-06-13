@@ -1,28 +1,18 @@
 <html><head><link rel="stylesheet" href="styles.css">
-<style>
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.card img{width:100%;height:220px;object-fit:cover;display:block}
-.details{display:none;padding:12px;border:1px solid #ddd}
-.card.active .details{display:block}
-.reveal{margin-top:8px}
-</style>
 <script>
-function toggleCard(id){document.getElementById(id).classList.toggle('active');}
+function copyEmail(btn){navigator.clipboard.writeText('contact@makingmovements.world');btn.innerText='email copied';setTimeout(()=>btn.innerText='contact',2000);}
+function toggleCard(el){el.classList.toggle('active');}
 </script></head><body>
-<header><nav>
-<a href="index.html">home</a>
-<a href="what-we-do.html">what we do</a>
-<a href="sketchbook.html">sketchbook</a>
-<a href="work-with-us.html">work with us</a>
-</nav></header>
-<div class="content"><h2>sketchbook</h2><div class="grid">
-
-<div id="c1" class="card"><img src="assets/Template.jpg"><button class="reveal" onclick="toggleCard('c1')">details</button><div class="details"><strong>Voices Radio meets Humanity Project</strong><p>podcast</p><p>food as resistance in north london</p><a target="_blank" href="https://soundcloud.com/voicesradio_ldn/making-movements-w-humanity">open →</a></div></div>
-
-<div id="c2" class="card"><img src="assets/Screenshot 2026-06-11 at 11.41.17.png"><button class="reveal" onclick="toggleCard('c2')">details</button><div class="details"><strong>Street Works</strong><p>event</p><p>civic street festival in jackson heights, new york</p><a target="_blank" href="https://www.street-work.org/">open →</a></div></div>
-
-<div id="c3" class="card"><img src="assets/image (1).jpg"><button class="reveal" onclick="toggleCard('c3')">details</button><div class="details"><strong>they will always let you down</strong><p>poem</p><p>reflections on the 'anti-war president'</p><a target="_blank" href="https://substack.com/home/post/p-183426736">open →</a></div></div>
-
-<div id="c4" class="card"><img src="assets/briefhistory.jpg"><button class="reveal" onclick="toggleCard('c4')">details</button><div class="details"><strong>a brief history of the future</strong><p>video</p><p>PBS mini documentary on citizen-led politics</p><a target="_blank" href="https://www.youtube.com/watch?v=97ckcgGoTGg&t=8s">open →</a></div></div>
-
-</div></div></body></html>
+<header><nav><a href="index.html">home</a> <a href="what-we-do.html">what we do</a> <a href="work-with-us.html">work with us</a> <a href="sketchbook.html">sketchbook</a></nav></header>
+<img class="hero" src="assets/web9.jpg">
+<div class="content"><h2>sketchbook</h2><p>· pieces · processes · ideas · inspiration ·</p>
+<div class="card"><img class="cardimg" src="assets/Template.jpg"><p><strong>Voices Radio meets Humanity Project</strong><br>podcast<br>food as resistance in north london</p><a class="button" href="https://soundcloud.com/voicesradio_ldn/making-movements-w-humanity">listen</a></div>
+<div class="card"><img class="cardimg" src="assets/Screenshot 2026-06-11 at 11.41.17.png"><p><strong>Street Works</strong><br>event<br>civic street festival in jackson heights, new york</p><a class="button" href="https://www.street-work.org/">visit</a></div>
+<div class="card"><img class="cardimg" src="assets/image (1).jpg"><p><strong>they will always let you down</strong><br>poem<br>reflections on the 'anti-war president'</p><a class="button" href="https://substack.com/home/post/p-183426736">read</a></div>
+<div class="connect"><strong>more sketches, news and inspiration</strong><br><br><a class="button" href="https://instagram.com/makingmovements.world">instagram</a> <a class="button">join newsletter</a></div>
+</div><div class="footer">making movements · counterculture / creative / collective</div>
+<script>
+document.querySelectorAll('.card,.tile').forEach(el=>{
+ el.addEventListener('click',()=>toggleCard(el));
+});
+</script></body></html>
