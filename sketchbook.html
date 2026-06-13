@@ -1,12 +1,36 @@
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+<html><head><link rel="stylesheet" href="styles.css">
+<script>
+function copyEmail(btn){
+ navigator.clipboard.writeText('contact@makingmovements.world');
+ const t=btn.innerText;
+ btn.innerText='email copied';
+ setTimeout(()=>btn.innerText=t,2000);
+}
+</script>
+</head><body>
 <header><nav><a href="index.html">home</a> <a href="what-we-do.html">what we do</a> <a href="work-with-us.html">work with us</a> <a href="sketchbook.html">sketchbook</a></nav></header>
 <img class="hero" src="assets/web9.jpg">
 <div class="content"><h2>sketchbook</h2><p>· pieces · processes · ideas · inspiration ·</p>
-<div class="card"><img class="cardimg" src="assets/Template.jpg"><p><strong>Voices Radio meets Humanity Project</strong><br>podcast<br>food as resistance in north london</p><a class="button" href="https://soundcloud.com/voicesradio_ldn/making-movements-w-humanity">listen</a></div>
-<div class="card"><img class="cardimg" src="assets/Screenshot 2026-06-11 at 11.41.17.png"><p><strong>Street Works</strong><br>event<br>civic street festival in jackson heights, new york</p><a class="button" href="https://www.street-work.org/">visit</a></div>
-<div class="card"><img class="cardimg" src="assets/image (1).jpg"><p><strong>they will always let you down</strong><br>poem<br>reflections on the 'anti-war president'</p><a class="button" href="https://substack.com/home/post/p-183426736">read</a></div>
-
-<div class="card"><img class="cardimg" src="assets/briefhistory.jpg"><p><strong>a brief history of the future</strong><br>video<br>PBS mini documentary on citizen-led politics</p><a class="button" target="_blank" href="https://www.youtube.com/watch?v=97ckcgGoTGg&t=8s">watch</a></div>
-<div class="connect"><strong>more sketches, news and inspiration</strong><br><br><a class="button" href="https://instagram.com/makingmovements.world">instagram</a> <a class="button">contact</a></div>
+<div class="card">
+<img class="cardimg" src="assets/Template.jpg">
+<div class="overlay">
+<strong>Voices Radio meets Humanity Project</strong><br>podcast<br>food as resistance in north london<br><br>
+<a class="overlaylink" target="_blank" href="https://soundcloud.com/voicesradio_ldn/making-movements-w-humanity">open →</a>
+</div></div><div class="card">
+<img class="cardimg" src="assets/Screenshot 2026-06-11 at 11.41.17.png">
+<div class="overlay">
+<strong>Street Works</strong><br>event<br>civic street festival in jackson heights, new york<br><br>
+<a class="overlaylink" target="_blank" href="https://www.street-work.org/">open →</a>
+</div></div><div class="card">
+<img class="cardimg" src="assets/image (1).jpg">
+<div class="overlay">
+<strong>they will always let you down</strong><br>poem<br>reflections on the 'anti-war president'<br><br>
+<a class="overlaylink" target="_blank" href="https://substack.com/home/post/p-183426736">open →</a>
+</div></div><div class="card">
+<img class="cardimg" src="assets/briefhistory.jpg">
+<div class="overlay">
+<strong>a brief history of the future</strong><br>video<br>PBS mini documentary on citizen-led politics<br><br>
+<a class="overlaylink" target="_blank" href="https://www.youtube.com/watch?v=97ckcgGoTGg&t=8s">open →</a>
+</div></div><div class="connect"><strong>more sketches, news and inspiration</strong><br><br><a class="button" href="https://instagram.com/makingmovements.world">instagram</a> <button class="button" onclick="copyEmail(this)">contact</button></div>
 
 </div><div class="footer">making movements · counterculture / creative / collective</div></body></html>

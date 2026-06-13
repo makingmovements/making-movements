@@ -1,4 +1,13 @@
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+<html><head><link rel="stylesheet" href="styles.css">
+<script>
+function copyEmail(btn){
+ navigator.clipboard.writeText('contact@makingmovements.world');
+ const t=btn.innerText;
+ btn.innerText='email copied';
+ setTimeout(()=>btn.innerText=t,2000);
+}
+</script>
+</head><body>
 <header><nav><a href="index.html">home</a> <a href="what-we-do.html">what we do</a> <a href="work-with-us.html">work with us</a> <a href="sketchbook.html">sketchbook</a></nav></header>
 <img class="hero" src="assets/web7.jpg">
 <div class="content"><h2>work with us</h2>
@@ -19,5 +28,5 @@
 <li>communications and storytelling</li>
 </ul>
 <p>get in touch to find out more.</p>
-<div class="connect"><button class="button">contact us</button></div>
+<div class="connect"><button class="button" onclick="copyEmail(this)">contact us</button></div>
 </div><div class="footer">making movements · counterculture / creative / collective</div></body></html>

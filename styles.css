@@ -74,3 +74,14 @@ h1,h2{
 .footer{margin-top:0!important}
 
 .button{display:inline-block;padding:10px 16px;border:1px solid #999;text-decoration:none;color:#111;background:#fff}
+
+.card{position:relative;overflow:hidden}
+.overlay{
+position:absolute;inset:0;
+background:rgba(0,0,0,.68);
+color:white;padding:24px;
+opacity:0;transition:opacity .25s ease;
+display:flex;flex-direction:column;justify-content:flex-end;
+}
+.card:hover .overlay{opacity:1}
+.overlaylink{color:white;text-decoration:none}
