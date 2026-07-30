@@ -1,33 +1,102 @@
-<html><head><link rel="stylesheet" href="styles.css">
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We Do | Making Movements</title>
+
+<link rel="stylesheet" href="styles.css">
+
 <script>
 function copyEmail(btn){
- navigator.clipboard.writeText('contact@makingmovements.world');
- const t=btn.innerText;
- btn.innerText='email copied';
- setTimeout(()=>btn.innerText=t,2000);
+    navigator.clipboard.writeText('contact@makingmovements.world');
+    const t=btn.innerText;
+    btn.innerText='email copied';
+    setTimeout(()=>btn.innerText=t,2000);
 }
 </script>
-</head><body>
-<header><nav><a href="index.html">home</a> <a href="what-we-do.html">what we do</a> <a href="work-with-us.html">work with us</a> <a href="sketchbook.html">sketchbook</a></nav></header>
-<img class="hero" src="assets/web6.jpg">
-<div class="content">
-<h2>what we do</h2>
-<p>making movements is a platform for artists of all kinds to ask: what would real democracy look (and sound, and feel...) like? </p>
 
-<p>we create</p>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html">home</a>
+<a href="what-we-do.html">what we do</a>
+<a href="work-with-us.html">work with us</a>
+<a href="sketchbook.html">projects</a>
+</nav>
+</header>
+
+<img class="hero" src="assets/web6.jpg" alt="Making Movements">
+
+<div class="content">
+
+<h2>what we do</h2>
+
+<p>
+making movements is a platform for artists of all kinds to ask:
+what would real democracy look (and sound, and feel...) like?
+</p>
+
+<h2>we create</h2>
+
 <ul>
 <li>art, installations and experiences</li>
 <li>meet-ups, workshops and events</li>
 <li>cultural strategy and programmes</li>
 </ul>
-<p>to build a shared imagination of a future that people can believe in.</p>
-<div class='rule'></div><p>we believe</p>
+
+<p>
+to build a shared imagination of a future that people can believe in.
+</p>
+
+<div class="rule"></div>
+
+<h2>we believe</h2>
+
 <ul>
-<li>politics is broken and its tearing our world apart. until we change our political systems things will keep getting worse.</li>
+<li>politics is broken and it's tearing our world apart. until we change our political systems things will keep getting worse.</li>
+
 <li>it doesn't have to be this way. different systems are emerging around the world showing what real democracy would look like.</li>
+
 <li>politics is downstream of culture. to make change, we need to make the revolution creative, joyful and irresistible.</li>
+
 <li>practice not theory. we learn by doing, making and experimenting, together.</li>
 </ul>
 
-<div class="connect"><a class="button" href="https://instagram.com/makingmovements.world">instagram</a></div>
-</div><div class="footer">making movements · counterculture / creative / collective</div></body></html>
+<p class="beliefs">
+<s>representation</s> participation<br>
+<s>politicians</s> people<br>
+<s>leadership</s> collective<br>
+<s>dependence</s> agency<br>
+<s>polarisation</s> belonging<br>
+<s>despair</s> imagination
+</p>
+
+<div class="connect">
+
+<button class="button" onclick="copyEmail(this)">
+contact us
+</button>
+
+<a class="button"
+href="https://instagram.com/makingmovements.world"
+target="_blank">
+instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+making movements · counterculture / creative / collective
+</div>
+
+</body>
+</html>
+```
