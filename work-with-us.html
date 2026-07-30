@@ -1,24 +1,74 @@
-<html><head><link rel="stylesheet" href="styles.css">
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Us | Making Movements</title>
+
+<link rel="stylesheet" href="styles.css">
+
 <script>
 function copyEmail(btn){
- navigator.clipboard.writeText('contact@makingmovements.world');
- const t=btn.innerText;
- btn.innerText='email copied';
- setTimeout(()=>btn.innerText=t,2000);
+    navigator.clipboard.writeText('contact@makingmovements.world');
+    const t=btn.innerText;
+    btn.innerText='email copied';
+    setTimeout(()=>btn.innerText=t,2000);
 }
 </script>
-</head><body>
-<header><nav><a href="index.html">home</a> <a href="what-we-do.html">what we do</a> <a href="work-with-us.html">work with us</a> <a href="sketchbook.html">sketchbook</a></nav></header>
-<img class="hero" src="assets/web7.jpg">
-<div class="content"><h2>work with us</h2>
-<p><strong>for artists</strong></p>
+
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html">home</a>
+<a href="what-we-do.html">what we do</a>
+<a href="work-with-us.html">work with us</a>
+<a href="sketchbook.html">projects</a>
+</nav>
+</header>
+
+<img class="hero" src="assets/web7.jpg" alt="Making Movements">
+
+<div class="content">
+
+<h2>work with us</h2>
+
+<h2>for artists</h2>
+
 <p>a space to turn political frustration into creative action.</p>
+
 <p>we host workshops in person and online, where artists, musicians, writers, designers, facilitators and curious people explore political futures through making.</p>
+
 <p>these are spaces for experimentation, collaboration and constructive imagination.</p>
+
 <p>whether you're a poet, electronic music producer, visual artist, organiser, researcher or simply interested in the future of politics, we'd love to hear from you.</p>
-<div class='rule'></div><p><strong>for organisations</strong></p>
-<p>We bring artists, imagination and creative practice into conversations about participation, democracy and social change.</p>
+
+<div class="connect">
+
+<button class="button" onclick="copyEmail(this)">
+contact us
+</button>
+
+<a class="button"
+href="https://instagram.com/makingmovements.world"
+target="_blank">
+instagram
+</a>
+
+</div>
+
+<div class="rule"></div>
+
+<h2>for organisations</h2>
+
+<p>we bring artists, imagination and creative practice into conversations about participation, democracy and social change.</p>
+
 <p>we can help with</p>
+
 <ul>
 <li>artist commissions and collaborations</li>
 <li>creative facilitation and participatory workshops</li>
@@ -27,6 +77,29 @@ function copyEmail(btn){
 <li>cultural strategy</li>
 <li>communications and storytelling</li>
 </ul>
+
 <p>if you'd like to find out more about our work and how we can help, get in touch.</p>
-<div class="connect"><button class="button" onclick="copyEmail(this)">contact us</button></div>
-</div><div class="footer">making movements · counterculture / creative / collective</div></body></html>
+
+<div class="connect">
+
+<button class="button" onclick="copyEmail(this)">
+contact us
+</button>
+
+<a class="button"
+href="https://instagram.com/makingmovements.world"
+target="_blank">
+instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+making movements · counterculture / creative / collective
+</div>
+
+</body>
+</html>
+```
