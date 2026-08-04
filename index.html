@@ -2,65 +2,74 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Making Movements</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="styles.css">
+<title>making movements</title>
 
-  <script>
-    function copyEmail(btn) {
-      navigator.clipboard.writeText("contact@makingmovements.world");
-      const original = btn.innerText;
-      btn.innerText = "email copied";
-      setTimeout(() => btn.innerText = original, 2000);
-    }
-  </script>
+<link rel="stylesheet" href="styles.css">
+
+<script>
+function copyEmail(btn){
+    navigator.clipboard.writeText("contact@makingmovements.world");
+    const original = btn.innerText;
+    btn.innerText = "email copied";
+    setTimeout(() => btn.innerText = original, 2000);
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <a href="index.html">home</a>
-    <a href="what-we-do.html">what we do</a>
-    <a href="work-with-us.html">work with us</a>
-    <a href="sketchbook.html">projects</a>
-  </nav>
+
+<nav>
+<a href="index.html">home</a>
+<a href="what-we-do.html">what we do</a>
+<a href="work-with-us.html">work with us</a>
+<a href="sketchbook.html">projects</a>
+</nav>
+
 </header>
 
 <img class="hero" src="assets/web4.jpg" alt="Making Movements">
 
 <div class="content">
 
-  <p class="home-prop">a creative platform</p>
+<p class="home-prop">
+a creative platform
+</p>
 
-  <p class="home-prop">to imagine a new politics</p>
+<p class="home-prop">
+to imagine a new politics
+</p>
 
-  <div class="home-line"></div>
+<div class="home-line"></div>
 
-  <p class="home-mm"><strong>making movements</strong></p>
+<p class="home-mm">
+making movements
+</p>
 
-  <div class="connect">
+<div class="connect">
 
-    <h2>open call</h2>
+<p>
+we're hosting meet-ups, online and in person, for creatives of all kinds.
+get in touch to find out more.
+</p>
 
-    <p>
-      we're hosting meet-ups, online and in person, for creatives of all kinds.
-      get in touch to find out more.
-    </p>
+<button class="button" onclick="copyEmail(this)">
+contact us
+</button>
 
-    <button class="button" onclick="copyEmail(this)">
-      contact us
-    </button>
-
-  </div>
+</div>
 
 </div>
 
 <footer class="footer">
-  making movements · counterculture / creative / collective
+making movements · counterculture / creative / collective
 </footer>
 
 </body>
+
 </html>
