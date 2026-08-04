@@ -34,7 +34,8 @@ nav a:hover{
 }
 
 .content{
-    max-width:820px;
+    max-width:1200px;
+    margin:0 auto;
     padding:48px 80px 120px;
 }
 
@@ -70,15 +71,15 @@ h2{
 }
 
 .connect{
-    margin-top:64px;
-    padding:24px 40px 32px;
+    margin-top:48px;
+    padding:24px 32px;
     background-image:url("assets/concrete.jpg");
     background-size:cover;
     border:1px solid #c9c9c9;
 }
 
 .connect h2{
-    margin:0 0 16px;
+    margin:0 0 12px;
 }
 
 .button{
@@ -87,11 +88,11 @@ h2{
     justify-content:center;
     width:140px;
     padding:10px 16px;
-    box-sizing:border-box;
     border:1px solid #999;
     background:#fff;
     color:#111;
     text-decoration:none;
+    box-sizing:border-box;
     cursor:pointer;
     font:inherit;
 }
@@ -101,45 +102,50 @@ h2{
 }
 
 .footer{
-    padding:40px 48px 120px;
     margin-top:0;
+    padding:40px 48px 120px;
     background-image:url("assets/concrete.jpg");
     background-size:cover;
     border-top:1px solid #c9c9c9;
     font-size:12px;
 }
 
+/* ---------- PROJECTS ---------- */
+
 .cards-grid{
     display:grid;
     gap:24px;
     margin:32px 0;
+    align-items:stretch;
 }
 
 .cards-grid.three{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,minmax(0,1fr));
 }
 
 .cards-grid.two{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
 .intro-card{
-    margin-top:0;
+    margin:0;
+    height:100%;
+    box-sizing:border-box;
 }
 
 .card{
     position:relative;
     overflow:hidden;
-    padding:40px 0;
-    border-top:1px solid #bbb;
+    padding:0;
+    border:1px solid #c9c9c9;
+    background:#ddd;
 }
 
 .cardimg{
+    display:block;
     width:100%;
     aspect-ratio:4/3;
     object-fit:cover;
-    display:block;
-    margin-bottom:20px;
 }
 
 .overlay{
@@ -149,7 +155,7 @@ h2{
     color:#fff;
     padding:24px;
     opacity:0;
-    transition:opacity .25s ease;
+    transition:.25s;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
@@ -168,6 +174,8 @@ h2{
     text-decoration:underline;
 }
 
+/* ---------- BELIEFS ---------- */
+
 .beliefs{
     margin-top:32px;
     line-height:2;
@@ -178,15 +186,12 @@ h2{
     margin-right:12px;
 }
 
+/* ---------- MOBILE ---------- */
+
 @media (max-width:900px){
 
-    .cards-grid.three,
-    .cards-grid.two{
-        grid-template-columns:1fr;
-    }
-
     .content{
-        padding:36px 24px 80px;
+        padding:32px 24px 80px;
     }
 
     .hero{
@@ -200,6 +205,11 @@ h2{
     nav a{
         display:block;
         margin:0 0 12px;
+    }
+
+    .cards-grid.three,
+    .cards-grid.two{
+        grid-template-columns:1fr;
     }
 
     .footer{
