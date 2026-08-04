@@ -1,11 +1,10 @@
-```css
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400&family=IBM+Plex+Sans:wght@400;500&family=Inter+Tight:wght@500;600&display=swap');
 
 body{
     margin:0;
     background:#e3e5e3;
     color:#111;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     line-height:1.8;
 }
 
@@ -48,9 +47,11 @@ h2{
 
 .home-prop,
 .home-mm{
-    font-family:"Azeret Mono",monospace;
-    font-size:28px;
-    font-weight:300;
+    font-family:"Inter Tight",sans-serif;
+    font-size:30px;
+    font-weight:500;
+    line-height:1.15;
+    letter-spacing:-0.03em;
 }
 
 .home-line{
@@ -110,8 +111,20 @@ h2{
 
 .cards-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
     gap:24px;
+    margin:32px 0;
+}
+
+.cards-grid.three{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.cards-grid.two{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.intro-card{
+    margin-top:0;
 }
 
 .card{
@@ -132,7 +145,7 @@ h2{
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.68);
+    background:rgba(0,0,0,.72);
     color:#fff;
     padding:24px;
     opacity:0;
@@ -165,7 +178,20 @@ h2{
     margin-right:12px;
 }
 
-@media (max-width:800px){
+@media (max-width:900px){
+
+    .cards-grid.three,
+    .cards-grid.two{
+        grid-template-columns:1fr;
+    }
+
+    .content{
+        padding:36px 24px 80px;
+    }
+
+    .hero{
+        height:240px;
+    }
 
     header{
         padding:20px 24px;
@@ -176,21 +202,8 @@ h2{
         margin:0 0 12px;
     }
 
-    .content{
-        padding:32px 24px 80px;
-    }
-
-    .hero{
-        height:220px;
-    }
-
-    .cards-grid{
-        grid-template-columns:1fr;
-    }
-
     .footer{
         padding:32px 24px 80px;
     }
 
 }
-```
