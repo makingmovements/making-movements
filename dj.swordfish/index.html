@@ -72,14 +72,26 @@
       padding: 72px 0;
     }
 
-    h2 {
-      margin: 0 0 26px;
-      font-family: "Azeret Mono", monospace;
+
+    /* MAIN DISPLAY TEXT */
+
+    .display-text {
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.45;
       font-weight: 400;
+      color: var(--text);
+    }
+
+
+    /* CREDENTIAL / CREDIT TEXT */
+
+    .mono-text {
+      font-family: "Azeret Mono", monospace;
       font-size: 0.85rem;
       line-height: 1.8;
+      font-weight: 400;
       color: var(--muted);
-      letter-spacing: 0;
     }
 
 
@@ -94,31 +106,22 @@
       max-width: 720px;
     }
 
-    /* dj swordfish + descriptive copy */
-
-    .intro .name,
-    .intro .description {
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.45;
-      color: var(--text);
-    }
-
-    /* professional DJ credentials */
-
-    .intro .credentials {
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
     .intro p {
       margin: 0 0 28px;
     }
 
     .intro p:last-child {
       margin-bottom: 0;
+    }
+
+
+    /* CREDENTIALS */
+
+    .credentials {
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--muted);
     }
 
 
@@ -132,6 +135,18 @@
       font-size: 0.85rem;
       line-height: 1.8;
       color: var(--muted);
+    }
+
+
+    /* SECTION HEADINGS */
+
+    .section-heading {
+      margin: 0 0 28px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      font-weight: 400;
+      color: var(--text);
     }
 
 
@@ -152,19 +167,11 @@
     /* EVENTS */
 
     .events-list {
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--muted);
       margin-bottom: 28px;
     }
 
     .events-copy {
       max-width: 650px;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.45;
-      color: var(--text);
     }
 
 
@@ -195,12 +202,13 @@
     }
 
     .email {
-      color: var(--muted);
+      color: var(--text);
       text-decoration: none;
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      border-bottom: 1px solid var(--muted);
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      font-weight: 400;
+      border-bottom: 1px solid var(--text);
       padding-bottom: 3px;
     }
 
@@ -235,13 +243,16 @@
         padding-bottom: 58px;
       }
 
-      .intro .name,
-      .intro .description {
+      .display-text,
+      .section-heading,
+      .email {
         font-size: 1.05rem;
         line-height: 1.45;
       }
 
-      .intro .credentials {
+      .credentials,
+      .mono-text,
+      .credits {
         font-size: 0.8rem;
         line-height: 1.8;
       }
@@ -271,7 +282,7 @@
   <!-- HERO -->
 
   <header class="hero">
-    <img src="images/hero.jpg" alt="dj swordfish performing">
+    <img src="hero.jpg" alt="dj swordfish performing">
   </header>
 
 
@@ -284,7 +295,7 @@
 
       <div class="intro">
 
-        <p class="name">
+        <p class="display-text">
           dj swordfish
         </p>
 
@@ -295,12 +306,12 @@
           Weddings and corporate events
         </p>
 
-        <p class="description">
+        <p class="display-text">
           Brighton based DJ and musician playing soulful dance music from around the world.
         </p>
 
-        <p class="description">
-          Experienced and adaptable, able to work with you to create the perfect night.
+        <p class="display-text">
+          Experienced, adaptable and happy to work with you to create the perfect night.
         </p>
 
       </div>
@@ -319,7 +330,7 @@
 
     <section class="listen">
 
-      <h2>Listen</h2>
+      <h2 class="section-heading">Listen</h2>
 
       <iframe
         class="soundcloud"
@@ -337,13 +348,13 @@
 
     <section class="events">
 
-      <h2>Events</h2>
+      <h2 class="section-heading">Events</h2>
 
-      <div class="events-list">
+      <div class="events-list display-text">
         Weddings · corporate events · private parties · cultural events · clubs · radio
       </div>
 
-      <div class="events-copy">
+      <div class="events-copy display-text">
         Available for a range of events, with music tailored to the atmosphere, audience and occasion.
       </div>
 
@@ -356,11 +367,11 @@
 
   <div class="image-strip">
 
-    <img src="images/radio.jpg" alt="dj swordfish at Brixton Radio">
+    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
 
-    <img src="images/trumpet.jpg" alt="dj swordfish playing trumpet">
+    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
 
-    <img src="images/dj-red.jpg" alt="dj swordfish performing">
+    <img src="dj-red.jpg" alt="dj swordfish performing">
 
   </div>
 
@@ -371,7 +382,7 @@
 
     <section class="enquiries">
 
-      <h2>Enquiries</h2>
+      <h2 class="section-heading">Enquiries</h2>
 
       <a
         class="email"
