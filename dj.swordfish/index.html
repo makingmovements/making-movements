@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --bg: #202020;
       --text: #f1f1ed;
@@ -42,6 +43,7 @@
       max-width: 100%;
     }
 
+
     /* HERO */
 
     .hero {
@@ -58,6 +60,7 @@
       object-position: center;
     }
 
+
     /* GENERAL */
 
     main {
@@ -69,28 +72,16 @@
       padding: 72px 0;
     }
 
-    h1,
-    h2,
-    .credits,
-    .events-list,
-    .enquiries {
-      font-family: "Azeret Mono", monospace;
-      font-weight: 400;
-    }
-
-    h1 {
-      margin: 0 0 32px;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
     h2 {
       margin: 0 0 26px;
-      font-size: 1rem;
-      text-transform: lowercase;
-      letter-spacing: 0.02em;
+      font-family: "Azeret Mono", monospace;
+      font-weight: 400;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--muted);
+      letter-spacing: 0;
     }
+
 
     /* INTRO */
 
@@ -99,20 +90,37 @@
       padding-bottom: 72px;
     }
 
-    .intro-copy {
+    .intro {
       max-width: 720px;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.2rem;
-      line-height: 1.45;
     }
 
-    .intro-copy p {
+    /* dj swordfish + descriptive copy */
+
+    .intro .name,
+    .intro .description {
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    /* professional DJ credentials */
+
+    .intro .credentials {
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .intro p {
       margin: 0 0 28px;
     }
 
-    .intro-copy p:last-child {
+    .intro p:last-child {
       margin-bottom: 0;
     }
+
 
     /* CREDITS */
 
@@ -120,10 +128,12 @@
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       padding: 26px 0;
-      color: var(--muted);
+      font-family: "Azeret Mono", monospace;
       font-size: 0.85rem;
       line-height: 1.8;
+      color: var(--muted);
     }
+
 
     /* LISTEN */
 
@@ -138,19 +148,25 @@
       display: block;
     }
 
+
     /* EVENTS */
 
     .events-list {
-      color: var(--muted);
-      font-size: 0.9rem;
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.85rem;
       line-height: 1.8;
+      color: var(--muted);
       margin-bottom: 28px;
     }
 
     .events-copy {
       max-width: 650px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.1rem;
+      line-height: 1.45;
+      color: var(--text);
     }
+
 
     /* IMAGE STRIP */
 
@@ -171,6 +187,7 @@
       object-fit: cover;
     }
 
+
     /* ENQUIRIES */
 
     .enquiries {
@@ -178,16 +195,19 @@
     }
 
     .email {
-      color: var(--text);
+      color: var(--muted);
       text-decoration: none;
-      font-size: 1.1rem;
-      border-bottom: 1px solid var(--text);
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      border-bottom: 1px solid var(--muted);
       padding-bottom: 3px;
     }
 
     .email:hover {
       opacity: 0.65;
     }
+
 
     /* MOBILE */
 
@@ -215,14 +235,15 @@
         padding-bottom: 58px;
       }
 
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 28px;
+      .intro .name,
+      .intro .description {
+        font-size: 1.05rem;
+        line-height: 1.45;
       }
 
-      .intro-copy {
-        font-size: 1.1rem;
-        line-height: 1.45;
+      .intro .credentials {
+        font-size: 0.8rem;
+        line-height: 1.8;
       }
 
       .soundcloud {
@@ -239,10 +260,13 @@
         min-height: 190px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- HERO -->
 
@@ -253,26 +277,29 @@
 
   <main>
 
+
     <!-- INTRO -->
 
     <section class="identity">
 
-      <h1>dj swordfish</h1>
+      <div class="intro">
 
-      <div class="intro-copy">
+        <p class="name">
+          dj swordfish
+        </p>
 
-        <p>
+        <p class="credentials">
           +15 years professional DJ<br>
           Resident on Brixton Radio and Voices Radio<br>
           Live trumpet and session musician<br>
           Weddings and corporate events
         </p>
 
-        <p>
+        <p class="description">
           Brighton based DJ and musician playing soulful dance music from around the world.
         </p>
 
-        <p>
+        <p class="description">
           Experienced and adaptable, able to work with you to create the perfect night.
         </p>
 
@@ -355,6 +382,7 @@
     </section>
 
   </main>
+
 
 </body>
 </html>
