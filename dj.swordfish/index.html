@@ -42,6 +42,8 @@
       max-width: 100%;
     }
 
+    /* HERO */
+
     .hero {
       width: 100%;
       height: min(68vh, 700px);
@@ -56,6 +58,8 @@
       object-position: center;
     }
 
+    /* GENERAL */
+
     main {
       width: min(calc(100% - 40px), var(--content));
       margin: 0 auto;
@@ -68,7 +72,6 @@
     h1,
     h2,
     .credits,
-    .credentials,
     .events-list,
     .enquiries {
       font-family: "Azeret Mono", monospace;
@@ -76,10 +79,10 @@
     }
 
     h1 {
-      margin: 0 0 28px;
-      font-size: clamp(2.6rem, 7vw, 5.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
+      margin: 0 0 32px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
     h2 {
@@ -89,33 +92,29 @@
       letter-spacing: 0.02em;
     }
 
+    /* INTRO */
+
     .identity {
       padding-top: 76px;
-      padding-bottom: 60px;
+      padding-bottom: 72px;
     }
 
-    .credentials {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .description {
+    .intro-copy {
       max-width: 720px;
-      padding: 20px 0 72px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.45;
     }
 
-    .description p {
-      margin: 0 0 26px;
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      line-height: 1.25;
-      letter-spacing: -0.025em;
+    .intro-copy p {
+      margin: 0 0 28px;
     }
 
-    .description p:last-child {
+    .intro-copy p:last-child {
       margin-bottom: 0;
     }
+
+    /* CREDITS */
 
     .credits {
       border-top: 1px solid var(--line);
@@ -125,6 +124,8 @@
       font-size: 0.85rem;
       line-height: 1.8;
     }
+
+    /* LISTEN */
 
     .listen {
       padding-top: 76px;
@@ -137,6 +138,8 @@
       display: block;
     }
 
+    /* EVENTS */
+
     .events-list {
       color: var(--muted);
       font-size: 0.9rem;
@@ -148,6 +151,8 @@
       max-width: 650px;
       font-size: 1.1rem;
     }
+
+    /* IMAGE STRIP */
 
     .image-strip {
       width: 100vw;
@@ -166,17 +171,7 @@
       object-fit: cover;
     }
 
-    .image-strip img:nth-child(1) {
-      object-position: center;
-    }
-
-    .image-strip img:nth-child(2) {
-      object-position: center;
-    }
-
-    .image-strip img:nth-child(3) {
-      object-position: center;
-    }
+    /* ENQUIRIES */
 
     .enquiries {
       padding: 76px 0 100px;
@@ -185,7 +180,7 @@
     .email {
       color: var(--text);
       text-decoration: none;
-      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-size: 1.1rem;
       border-bottom: 1px solid var(--text);
       padding-bottom: 3px;
     }
@@ -194,7 +189,10 @@
       opacity: 0.65;
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
+
       body {
         font-size: 16px;
       }
@@ -214,11 +212,17 @@
 
       .identity {
         padding-top: 58px;
-        padding-bottom: 42px;
+        padding-bottom: 58px;
       }
 
-      .description {
-        padding-bottom: 52px;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 28px;
+      }
+
+      .intro-copy {
+        font-size: 1.1rem;
+        line-height: 1.45;
       }
 
       .soundcloud {
@@ -234,52 +238,60 @@
         height: 52vw;
         min-height: 190px;
       }
-
-      .image-strip img:nth-child(1) {
-        object-position: 50% center;
-      }
-
-      .image-strip img:nth-child(2) {
-        object-position: 50% center;
-      }
-
-      .image-strip img:nth-child(3) {
-        object-position: 50% center;
-      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HERO -->
+
   <header class="hero">
     <img src="images/hero.jpg" alt="dj swordfish performing">
   </header>
 
+
   <main>
 
+    <!-- INTRO -->
+
     <section class="identity">
+
       <h1>dj swordfish</h1>
 
-      <p class="credentials">
-        15+ years DJing professionally<br>
-        Resident on Brixton Radio and Voices Radio<br>
-        Live trumpet and session musician<br>
-        Weddings and corporate events
-      </p>
+      <div class="intro-copy">
+
+        <p>
+          +15 years professional DJ<br>
+          Resident on Brixton Radio and Voices Radio<br>
+          Live trumpet and session musician<br>
+          Weddings and corporate events
+        </p>
+
+        <p>
+          Brighton based DJ and musician playing soulful dance music from around the world.
+        </p>
+
+        <p>
+          Experienced and adaptable, able to work with you to create the perfect night.
+        </p>
+
+      </div>
+
     </section>
 
-    <section class="description">
-      <p>Brighton based DJ and musician playing soulful dance music from around the world.</p>
 
-      <p>Experienced and adaptable, able to work with you to create the perfect night.</p>
-    </section>
+    <!-- CREDITS -->
 
     <div class="credits">
-      Credits: Making Movements · Sessions Arts Club, Good Life, Rum &amp; Bass, Aux Chords, Brixton Radio, Voices Radio, Reform Radio
+      Credits: Making Movements · Sessions Arts Club · Good Life · Rum &amp; Bass · Aux Chords · Brixton Radio · Voices Radio · Reform Radio
     </div>
 
+
+    <!-- LISTEN -->
+
     <section class="listen">
+
       <h2>Listen</h2>
 
       <iframe
@@ -290,9 +302,14 @@
         title="dj swordfish mixes on SoundCloud"
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
       </iframe>
+
     </section>
 
+
+    <!-- EVENTS -->
+
     <section class="events">
+
       <h2>Events</h2>
 
       <div class="events-list">
@@ -302,21 +319,41 @@
       <div class="events-copy">
         Available for a range of events, with music tailored to the atmosphere, audience and occasion.
       </div>
+
     </section>
 
   </main>
 
+
+  <!-- IMAGE STRIP -->
+
   <div class="image-strip">
+
     <img src="images/radio.jpg" alt="dj swordfish at Brixton Radio">
+
     <img src="images/trumpet.jpg" alt="dj swordfish playing trumpet">
+
     <img src="images/dj-red.jpg" alt="dj swordfish performing">
+
   </div>
 
+
   <main>
+
+    <!-- ENQUIRIES -->
+
     <section class="enquiries">
+
       <h2>Enquiries</h2>
-      <a class="email" href="mailto:contact@makingmovements.world">contact@makingmovements.world</a>
+
+      <a
+        class="email"
+        href="mailto:contact@makingmovements.world">
+        contact@makingmovements.world
+      </a>
+
     </section>
+
   </main>
 
 </body>
