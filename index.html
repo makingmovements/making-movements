@@ -1,86 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>making movements</title>
+  <title>dj swordfish</title>
+  <meta name="description" content="dj swordfish — Brighton based DJ and musician playing soulful dance music from around the world.">
 
-<meta property="og:title" content="making movements">
-<meta property="og:description" content="a creative platform to imagine a new politics">
-<meta property="og:image" content="https://makingmovements.world/assets/flamingos.jpg">
-<meta property="og:url" content="https://makingmovements.world/">
-<meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="making movements">
-<meta name="twitter:description" content="a creative platform to imagine a new politics">
-<meta name="twitter:image" content="https://makingmovements.world/assets/flamingos.jpg">
+  <style>
+    :root {
+      --bg: #202020;
+      --text: #f1f1ed;
+      --muted: #bdbdb8;
+      --line: #3b3b3b;
+      --content: 820px;
+    }
 
-<link rel="stylesheet" href="styles.css">
+    * {
+      box-sizing: border-box;
+    }
 
-<script>
-function copyEmail(btn){
-    navigator.clipboard.writeText("contact@makingmovements.world");
-    const original = btn.innerText;
-    btn.innerText = "email copied";
-    setTimeout(() => btn.innerText = original, 2000);
-}
-</script>
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .hero {
+      width: 100%;
+      height: min(68vh, 700px);
+      min-height: 380px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    main {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    h1,
+    h2,
+    .credits,
+    .credentials,
+    .events-list,
+    .enquiries {
+      font-family: "Azeret Mono", monospace;
+      font-weight: 400;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      margin: 0 0 26px;
+      font-size: 1rem;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+    }
+
+    .identity {
+      padding-top: 76px;
+      padding-bottom: 60px;
+    }
+
+    .credentials {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .description {
+      max-width: 720px;
+      padding: 20px 0 72px;
+    }
+
+    .description p {
+      margin: 0 0 26px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .credits {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .listen {
+      padding-top: 76px;
+    }
+
+    .soundcloud {
+      width: 100%;
+      min-height: 450px;
+      border: 0;
+      display: block;
+    }
+
+    .events-list {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .events-copy {
+      max-width: 650px;
+      font-size: 1.1rem;
+    }
+
+    .image-strip {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 40px;
+    }
+
+    .image-strip img {
+      width: 100%;
+      height: 34vw;
+      max-height: 520px;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    .image-strip img:nth-child(1) {
+      object-position: center;
+    }
+
+    .image-strip img:nth-child(2) {
+      object-position: center;
+    }
+
+    .image-strip img:nth-child(3) {
+      object-position: center;
+    }
+
+    .enquiries {
+      padding: 76px 0 100px;
+    }
+
+    .email {
+      color: var(--text);
+      text-decoration: none;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 3px;
+    }
+
+    .email:hover {
+      opacity: 0.65;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 16px;
+      }
+
+      main {
+        width: min(calc(100% - 28px), var(--content));
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .hero {
+        height: 55vh;
+        min-height: 300px;
+      }
+
+      .identity {
+        padding-top: 58px;
+        padding-bottom: 42px;
+      }
+
+      .description {
+        padding-bottom: 52px;
+      }
+
+      .soundcloud {
+        min-height: 450px;
+      }
+
+      .image-strip {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+      }
+
+      .image-strip img {
+        height: 52vw;
+        min-height: 190px;
+      }
+
+      .image-strip img:nth-child(1) {
+        object-position: 50% center;
+      }
+
+      .image-strip img:nth-child(2) {
+        object-position: 50% center;
+      }
+
+      .image-strip img:nth-child(3) {
+        object-position: 50% center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header class="hero">
+    <img src="images/hero.jpg" alt="dj swordfish performing">
+  </header>
 
-<nav>
-<a href="index.html">home</a>
-<a href="what-we-do.html">what we do</a>
-<a href="work-with-us.html">work with us</a>
-<a href="projects.html">projects</a>
-</nav>
+  <main>
 
-</header>
+    <section class="identity">
+      <h1>dj swordfish</h1>
 
-<img class="hero" src="assets/flamingos.jpg" alt="Making Movements">
+      <p class="credentials">
+        15+ years DJing professionally<br>
+        Resident on Brixton Radio and Voices Radio<br>
+        Live trumpet and session musician<br>
+        Weddings and corporate events
+      </p>
+    </section>
 
-<div class="content">
+    <section class="description">
+      <p>Brighton based DJ and musician playing soulful dance music from around the world.</p>
 
-<p class="home-prop">
-a creative platform
-</p>
+      <p>Experienced and adaptable, able to work with you to create the perfect night.</p>
+    </section>
 
-<p class="home-prop">
-to imagine a new politics
-</p>
+    <div class="credits">
+      Credits: Making Movements · Sessions Arts Club, Good Life, Rum &amp; Bass, Aux Chords, Brixton Radio, Voices Radio, Reform Radio
+    </div>
 
-<div class="home-line"></div>
+    <section class="listen">
+      <h2>Listen</h2>
 
-<p class="home-mm">
-making movements
-</p>
+      <iframe
+        class="soundcloud"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        title="dj swordfish mixes on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
+      </iframe>
+    </section>
 
-<div class="connect">
+    <section class="events">
+      <h2>Events</h2>
 
-<p>
-we're hosting meet-ups around the UK and online. 
-get in touch to find out more.
-</p>
+      <div class="events-list">
+        Weddings · corporate events · private parties · cultural events · clubs · radio
+      </div>
 
-<button class="button" onclick="copyEmail(this)">
-contact us
-</button>
+      <div class="events-copy">
+        Available for a range of events, with music tailored to the atmosphere, audience and occasion.
+      </div>
+    </section>
 
-</div>
+  </main>
 
-</div>
+  <div class="image-strip">
+    <!-- Order: right image, middle image, left image as requested -->
+    <img src="images/radio.jpg" alt="dj swordfish at Brixton Radio">
+    <img src="images/trumpet.jpg" alt="dj swordfish playing trumpet">
+    <img src="images/dj-red.jpg" alt="dj swordfish performing">
+  </div>
 
-<footer class="footer">
-making movements · counterculture / creative / collective
-</footer>
+  <main>
+    <section class="enquiries">
+      <h2>Enquiries</h2>
+      <a class="email" href="mailto:contact@makingmovements.world">contact@makingmovements.world</a>
+    </section>
+  </main>
 
 </body>
-
 </html>
