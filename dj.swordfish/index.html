@@ -17,6 +17,7 @@
       --bg: #202020;
       --text: #f1f1ed;
       --muted: #bdbdb8;
+      --name: #969691;
       --line: #3b3b3b;
       --content: 820px;
     }
@@ -35,7 +36,7 @@
       color: var(--text);
       font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 18px;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     img {
@@ -78,18 +79,32 @@
     .display-text {
       font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.1rem;
-      line-height: 1.45;
+      line-height: 1.5;
       font-weight: 400;
       color: var(--text);
     }
 
 
-    /* CREDENTIAL / CREDIT TEXT */
+    /* NAME */
 
-    .mono-text {
+    .name {
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--name);
+    }
+
+
+    /* MONO / GREY TEXT */
+
+    .credentials,
+    .genres,
+    .credits,
+    .clients {
       font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.5;
       font-weight: 400;
       color: var(--muted);
     }
@@ -115,38 +130,20 @@
     }
 
 
-    /* CREDENTIALS */
+    /* GENRES */
 
-    .credentials {
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--muted);
+    .genres {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 26px 0;
     }
 
 
     /* CREDITS */
 
     .credits {
-      border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       padding: 26px 0;
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-
-    /* SECTION HEADINGS */
-
-    .section-heading {
-      margin: 0 0 28px;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.45;
-      font-weight: 400;
-      color: var(--text);
     }
 
 
@@ -172,6 +169,17 @@
 
     .events-copy {
       max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .events-quote {
+      max-width: 720px;
+      margin: 48px 0 0;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--text);
     }
 
 
@@ -180,10 +188,6 @@
     .clients {
       border-bottom: 1px solid var(--line);
       padding: 0 0 26px;
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--muted);
     }
 
 
@@ -218,7 +222,7 @@
       text-decoration: none;
       font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.1rem;
-      line-height: 1.45;
+      line-height: 1.5;
       font-weight: 400;
       border-bottom: 1px solid var(--text);
       padding-bottom: 3px;
@@ -256,18 +260,23 @@
       }
 
       .display-text,
-      .section-heading,
+      .name,
       .email {
         font-size: 1.05rem;
-        line-height: 1.45;
+        line-height: 1.5;
       }
 
       .credentials,
-      .mono-text,
+      .genres,
       .credits,
       .clients {
-        font-size: 0.8rem;
-        line-height: 1.8;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .events-quote {
+        font-size: 1.05rem;
+        line-height: 1.5;
       }
 
       .soundcloud {
@@ -308,15 +317,8 @@
 
       <div class="intro">
 
-        <p class="display-text">
+        <p class="name">
           dj swordfish
-        </p>
-
-        <p class="credentials">
-          +15 years professional DJ<br>
-          Resident on Brixton Radio and Voices Radio<br>
-          Live trumpet and session musician<br>
-          Weddings and corporate events
         </p>
 
         <p class="display-text">
@@ -324,7 +326,14 @@
         </p>
 
         <p class="display-text">
-          Experienced, adaptable, collaborative, fun.
+          Specialist in cross genre mixing and global connections.
+        </p>
+
+        <p class="credentials">
+          +15 years professional experience<br>
+          Resident on Brixton Radio and Voices Radio<br>
+          Live trumpet and session musician<br>
+          Weddings, corporate and cultural events
         </p>
 
       </div>
@@ -332,18 +341,23 @@
     </section>
 
 
+    <!-- GENRES -->
+
+    <div class="genres">
+      Jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+    </div>
+
+
     <!-- CREDITS -->
 
     <div class="credits">
-      Credits: Making Movements · Good Life · Rum &amp; Bass · Aux Chords · Brixton Radio · Voices Radio · Reform Radio
+      Making Movements · Sessions Arts Club · Good Life · Rum &amp; Bass · Aux Chords · Brixton Radio · Voices Radio · Reform Radio
     </div>
 
 
     <!-- LISTEN -->
 
     <section class="listen">
-
-      <h2 class="section-heading">Listen</h2>
 
       <iframe
         class="soundcloud"
@@ -361,7 +375,7 @@
 
     <section class="events">
 
-      <h2 class="section-heading">Events</h2>
+      <h2 class="display-text">Events</h2>
 
       <div class="events-list display-text">
         Weddings · corporate events · private parties · cultural events · clubs · radio
@@ -370,6 +384,18 @@
       <div class="events-copy display-text">
         Available for a range of events, with music tailored to the atmosphere, audience and occasion.
       </div>
+
+      <div class="events-copy display-text">
+        Comfortable curating announcements, speeches, first dances etc.
+      </div>
+
+      <div class="events-copy display-text">
+        Happy to handle all sound and tech setup.
+      </div>
+
+      <p class="events-quote">
+        “I love working with clients and venues to find their perfect sound. I’ve been collecting music my whole life, from vintage discoveries to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
+      </p>
 
     </section>
 
@@ -403,7 +429,7 @@
 
     <section class="enquiries">
 
-      <h2 class="section-heading">Enquiries</h2>
+      <h2 class="display-text">Enquiries</h2>
 
       <a
         class="email"
