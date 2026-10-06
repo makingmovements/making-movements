@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>dj swordfish</title>
-  <meta name="description" content="dj swordfish — Brighton based DJ and musician playing soulful dance music from around the world.">
+  <meta name="description" content="dj swordfish — Brighton based DJ and musician.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,17 +17,12 @@
       --bg: #202020;
       --text: #f1f1ed;
       --muted: #bdbdb8;
-      --name: #969691;
       --line: #3b3b3b;
       --content: 820px;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -49,9 +44,9 @@
 
     .hero {
       width: 100%;
-      height: 8vw;
-      min-height: 70px;
-      max-height: 120px;
+      height: 1.6vw;
+      min-height: 24px;
+      max-height: 40px;
       overflow: hidden;
     }
 
@@ -63,143 +58,23 @@
     }
 
 
-    /* GENERAL */
+    /* CONTENT */
 
     main {
       width: min(calc(100% - 40px), var(--content));
       margin: 0 auto;
     }
 
-    section {
-      padding: 72px 0;
-    }
 
-
-    /* MAIN DISPLAY TEXT */
-
-    .display-text {
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--text);
-    }
-
-
-    /* INTRO */
-
-    .identity {
-      padding-top: 76px;
-      padding-bottom: 56px;
-    }
-
-    .intro {
-      max-width: 720px;
-    }
-
-    .intro p {
-      margin: 0 0 28px;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-
-    /* NAME */
-
-    .name {
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--name);
-      font-style: italic;
-    }
-
-
-    /* GREY / MONO TEXT */
+    /* CREDENTIALS */
 
     .credentials {
+      padding: 72px 0 64px;
       font-family: "Azeret Mono", monospace;
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.6;
       font-weight: 400;
       color: var(--muted);
-    }
-
-
-    /* LISTEN */
-
-    .listen {
-      padding: 0 0 72px;
-    }
-
-    .soundcloud {
-      width: 100%;
-      min-height: 450px;
-      border: 0;
-      display: block;
-    }
-
-
-    /* EVENTS / DESCRIPTION */
-
-    .events {
-      padding-top: 0;
-      padding-bottom: 56px;
-    }
-
-    .events-quote {
-      max-width: 720px;
-      margin: 0 0 36px;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--text);
-    }
-
-    .events .credentials {
-      margin: 0;
-    }
-
-
-    /* CLIENTS */
-
-    .clients {
-      padding: 26px 0 0;
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-
-    /* ENQUIRIES */
-
-    .enquiries {
-      padding: 72px 0 80px;
-    }
-
-    .enquiries h2 {
-      margin: 0 0 24px;
-    }
-
-    .email {
-      color: var(--text);
-      text-decoration: none;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 3px;
-    }
-
-    .email:hover {
-      opacity: 0.65;
     }
 
 
@@ -222,55 +97,61 @@
     }
 
 
-    /* GENRE TICKER */
+    /* QUOTE */
 
-    .genres {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      overflow: hidden;
-      padding: 22px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      font-family: "Azeret Mono", monospace;
-      font-size: 0.85rem;
+    .quote {
+      padding: 72px 0 64px;
+      max-width: 720px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
       line-height: 1.5;
       font-weight: 400;
-      color: var(--muted);
-      white-space: nowrap;
+      color: var(--text);
     }
 
-    .genres-track {
-      display: flex;
-      width: max-content;
-      animation: genre-scroll 35s linear infinite;
+
+    /* ENQUIRIES */
+
+    .enquiries {
+      padding: 0 0 72px;
     }
 
-    .genres-content {
-      display: flex;
-      flex-shrink: 0;
+    .enquiries-title {
+      margin: 0 0 20px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--text);
     }
 
-    .genres-content span {
+    .email {
+      color: var(--text);
+      text-decoration: none;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 3px;
+    }
+
+    .email:hover {
+      opacity: 0.65;
+    }
+
+
+    /* SOUNDCLOUD */
+
+    .listen {
+      padding: 0 0 100px;
+    }
+
+    .soundcloud {
+      width: 100%;
+      min-height: 450px;
+      border: 0;
       display: block;
-      padding-right: 80px;
-    }
-
-    .genres-content:last-child span {
-      padding-right: 0;
-    }
-
-    .genres:hover .genres-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes genre-scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
     }
 
 
@@ -286,58 +167,16 @@
         width: min(calc(100% - 28px), var(--content));
       }
 
-      section {
-        padding: 52px 0;
-      }
-
       .hero {
-        height: 15vw;
-        min-height: 55px;
-        max-height: 90px;
+        height: 1.8vw;
+        min-height: 18px;
+        max-height: 28px;
       }
 
-      .identity {
-        padding-top: 58px;
-        padding-bottom: 46px;
-      }
-
-      .display-text,
-      .name,
-      .email {
-        font-size: 1.05rem;
-        line-height: 1.5;
-      }
-
-      .credentials,
-      .clients {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      .listen {
-        padding-bottom: 52px;
-      }
-
-      .soundcloud {
-        min-height: 450px;
-      }
-
-      .events {
-        padding-top: 0;
-        padding-bottom: 46px;
-      }
-
-      .events-quote {
-        font-size: 1.05rem;
-        line-height: 1.5;
-      }
-
-      .clients {
-        padding-top: 22px;
-      }
-
-      .enquiries {
-        padding: 56px 0 64px;
+      .credentials {
+        padding: 52px 0 46px;
+        font-size: 0.88rem;
+        line-height: 1.6;
       }
 
       .image-strip {
@@ -350,21 +189,27 @@
         min-height: 190px;
       }
 
-      .genres {
-        padding: 18px 0;
-        font-size: 0.75rem;
+      .quote {
+        padding: 52px 0 46px;
+        font-size: 1.05rem;
+        line-height: 1.5;
       }
 
-      .genres-track {
-        animation-duration: 28s;
+      .enquiries {
+        padding-bottom: 52px;
       }
 
-      .genres-content span {
-        padding-right: 60px;
+      .enquiries-title,
+      .email {
+        font-size: 1.05rem;
       }
 
-      .genres-content:last-child span {
-        padding-right: 0;
+      .listen {
+        padding-bottom: 70px;
+      }
+
+      .soundcloud {
+        min-height: 450px;
       }
     }
 
@@ -382,38 +227,63 @@
   </header>
 
 
-  <!-- INTRO -->
+  <main>
+
+
+    <!-- CREDENTIALS -->
+
+    <div class="credentials">
+      +15 years experience<br>
+      Brixton Radio and Voices Radio resident<br>
+      Live trumpet and session musician<br>
+      Multi-genre specialist
+    </div>
+
+
+  </main>
+
+
+  <!-- IMAGES -->
+
+  <div class="image-strip">
+
+    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
+
+    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
+
+    <img src="dj-red.jpg" alt="dj swordfish performing">
+
+  </div>
+
 
   <main>
 
-    <section class="identity">
 
-      <div class="intro">
+    <!-- QUOTE -->
 
-        <p class="name">
-          dj swordfish
-        </p>
+    <div class="quote">
+      “I love working with clients and venues to find the right sound. I’ve been collecting music my whole life, from dusty records to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
+    </div>
 
-        <p class="display-text">
-          Brighton based DJ and musician playing soulful dance music from around the world.
-        </p>
 
-        <p class="credentials">
-          +15 years experience<br>
-          Resident on Brixton Radio and Voices Radio<br>
-          Live trumpet and session musician<br>
-          Podcaster and producer<br>
-          Vinyl and digital<br>
-          Cultural, corporate and private events<br>
-          Multi-genre, global connections
-        </p>
+    <!-- ENQUIRIES -->
 
-      </div>
+    <section class="enquiries">
+
+      <p class="enquiries-title">
+        Enquiries
+      </p>
+
+      <a
+        class="email"
+        href="mailto:contact@makingmovements.world">
+        contact@makingmovements.world
+      </a>
 
     </section>
 
 
-    <!-- SOUNDcloud PLAYER -->
+    <!-- SOUNDCLOUD -->
 
     <section class="listen">
 
@@ -429,84 +299,7 @@
     </section>
 
 
-    <!-- EVENTS -->
-
-    <section class="events">
-
-      <p class="events-quote">
-        “I love working with clients and venues to find the right sound. I’ve been collecting music my whole life, from dusty records to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
-      </p>
-
-      <p class="credentials">
-        Music tailored for atmosphere and occasion<br>
-        Curated moments, announcements, speeches, dances<br>
-        Complete sound and tech setup<br>
-        Cultural, corporate, private
-      </p>
-
-    </section>
-
-
-    <!-- CLIENTS -->
-
-    <div class="clients">
-      Clients: Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
-    </div>
-
-
-    <!-- ENQUIRIES -->
-
-    <section class="enquiries">
-
-      <h2 class="display-text">
-        Enquiries
-      </h2>
-
-      <a
-        class="email"
-        href="mailto:contact@makingmovements.world">
-        contact@makingmovements.world
-      </a>
-
-    </section>
-
   </main>
-
-
-  <!-- IMAGE STRIP -->
-
-  <div class="image-strip">
-
-    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
-
-    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
-
-    <img src="dj-red.jpg" alt="dj swordfish performing">
-
-  </div>
-
-
-  <!-- GENRE TICKER -->
-
-  <div class="genres">
-
-    <div class="genres-track">
-
-      <div class="genres-content">
-        <span>
-          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
-        </span>
-      </div>
-
-      <div class="genres-content">
-        <span>
-          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
-        </span>
-      </div>
-
-    </div>
-
-  </div>
 
 
 </body>
