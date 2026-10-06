@@ -49,8 +49,9 @@
 
     .hero {
       width: 100%;
-      height: min(68vh, 700px);
-      min-height: 380px;
+      height: 17vw;
+      min-height: 180px;
+      max-height: 280px;
       overflow: hidden;
     }
 
@@ -128,10 +129,64 @@
     }
 
 
+    /* IMAGE STRIP */
+
+    .image-strip {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .image-strip img {
+      width: 100%;
+      height: 34vw;
+      max-height: 520px;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+
+    /* EVENTS */
+
+    .events {
+      padding-top: 72px;
+      padding-bottom: 56px;
+    }
+
+    .events-quote {
+      max-width: 720px;
+      margin: 0 0 36px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .events .credentials {
+      margin: 0;
+    }
+
+
+    /* CLIENTS */
+
+    .clients {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      font-family: "Azeret Mono", monospace;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+
     /* LISTEN */
 
     .listen {
-      padding: 0 0 64px;
+      padding: 72px 0 64px;
     }
 
     .soundcloud {
@@ -139,6 +194,32 @@
       min-height: 450px;
       border: 0;
       display: block;
+    }
+
+
+    /* ENQUIRIES */
+
+    .enquiries {
+      padding: 72px 0 100px;
+    }
+
+    .enquiries h2 {
+      margin: 0 0 24px;
+    }
+
+    .email {
+      color: var(--text);
+      text-decoration: none;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 3px;
+    }
+
+    .email:hover {
+      opacity: 0.65;
     }
 
 
@@ -194,90 +275,6 @@
     }
 
 
-    /* IMAGE STRIP */
-
-    .image-strip {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-
-    .image-strip img {
-      width: 100%;
-      height: 34vw;
-      max-height: 520px;
-      min-height: 260px;
-      object-fit: cover;
-    }
-
-
-    /* EVENTS */
-
-    .events {
-      padding-top: 72px;
-      padding-bottom: 56px;
-    }
-
-    .events .name {
-      margin: 0 0 28px;
-    }
-
-    .events-quote {
-      max-width: 720px;
-      margin: 0 0 36px;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--text);
-    }
-
-    .events .credentials {
-      margin: 0;
-    }
-
-
-    /* CLIENTS */
-
-    .clients {
-      border-top: 1px solid var(--line);
-      padding: 26px 0;
-      font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-
-    /* ENQUIRIES */
-
-    .enquiries {
-      padding: 72px 0 100px;
-    }
-
-    .enquiries h2 {
-      margin: 0 0 24px;
-    }
-
-    .email {
-      color: var(--text);
-      text-decoration: none;
-      font-family: "IBM Plex Sans", Arial, sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 3px;
-    }
-
-    .email:hover {
-      opacity: 0.65;
-    }
-
-
     /* MOBILE */
 
     @media (max-width: 700px) {
@@ -295,8 +292,9 @@
       }
 
       .hero {
-        height: 55vh;
-        min-height: 300px;
+        height: 25vw;
+        min-height: 100px;
+        max-height: 180px;
       }
 
       .identity {
@@ -316,26 +314,6 @@
       .clients {
         font-size: 0.95rem;
         line-height: 1.5;
-      }
-
-      .listen {
-        padding-bottom: 48px;
-      }
-
-      .genres {
-        padding: 22px 0;
-      }
-
-      .genres-track {
-        animation-duration: 28s;
-      }
-
-      .genres-content span {
-        padding-right: 60px;
-      }
-
-      .genres-content:last-child span {
-        padding-right: 0;
       }
 
       .image-strip {
@@ -358,6 +336,10 @@
         line-height: 1.5;
       }
 
+      .listen {
+        padding: 52px 0 48px;
+      }
+
       .soundcloud {
         min-height: 450px;
       }
@@ -368,6 +350,22 @@
 
       .enquiries {
         padding: 56px 0 80px;
+      }
+
+      .genres {
+        padding: 22px 0;
+      }
+
+      .genres-track {
+        animation-duration: 28s;
+      }
+
+      .genres-content span {
+        padding-right: 60px;
+      }
+
+      .genres-content:last-child span {
+        padding-right: 0;
       }
     }
 
@@ -385,10 +383,9 @@
   </header>
 
 
+  <!-- INTRO -->
+
   <main>
-
-
-    <!-- INTRO -->
 
     <section class="identity">
 
@@ -416,46 +413,6 @@
 
     </section>
 
-
-    <!-- LISTEN -->
-
-    <section class="listen">
-
-      <iframe
-        class="soundcloud"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        title="dj swordfish mixes on SoundCloud"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
-      </iframe>
-
-    </section>
-
-
-    <!-- GENRES -->
-
-    <div class="genres">
-
-      <div class="genres-track">
-
-        <div class="genres-content">
-          <span>
-            jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
-          </span>
-        </div>
-
-        <div class="genres-content">
-          <span>
-            jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
-          </span>
-        </div>
-
-      </div>
-
-    </div>
-
-
   </main>
 
 
@@ -472,16 +429,11 @@
   </div>
 
 
+  <!-- EVENTS / CLIENTS -->
+
   <main>
 
-
-    <!-- EVENTS -->
-
     <section class="events">
-
-      <p class="name">
-        Events
-      </p>
 
       <p class="events-quote">
         “I love working with clients and venues to find the right sound. I’ve been collecting music my whole life, from dusty records to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
@@ -497,11 +449,25 @@
     </section>
 
 
-    <!-- CLIENTS -->
-
     <div class="clients">
       Clients: Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
     </div>
+
+
+    <!-- LISTEN -->
+
+    <section class="listen">
+
+      <iframe
+        class="soundcloud"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        title="dj swordfish mixes on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
+      </iframe>
+
+    </section>
 
 
     <!-- ENQUIRIES -->
@@ -520,8 +486,30 @@
 
     </section>
 
-
   </main>
+
+
+  <!-- GENRE TICKER -->
+
+  <div class="genres">
+
+    <div class="genres-track">
+
+      <div class="genres-content">
+        <span>
+          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+        </span>
+      </div>
+
+      <div class="genres-content">
+        <span>
+          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+        </span>
+      </div>
+
+    </div>
+
+  </div>
 
 
 </body>
