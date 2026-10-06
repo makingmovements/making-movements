@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>dj swordfish — player test</title>
+
+  <style>
+    :root {
+      --bg: #202020;
+      --panel: #292929;
+      --text: #f1f1ed;
+      --muted: #969691;
+      --line: #454545;
+      --accent: #f1f1ed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .player {
+      width: min(760px, 100%);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+
+    .eyebrow {
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .track {
+      font-family: monospace;
+      font-size: 14px;
+      color: var(--muted);
+      min-height: 21px;
+      margin-bottom: 28px;
+    }
+
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 28px 0;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      padding: 8px;
+    }
+
+    button:hover {
+      opacity: 0.65;
+    }
+
+    .play {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .secondary {
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .soundcloud-link {
+      display: block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .soundcloud-link:hover {
+      color: var(--text);
+    }
+
+    .status {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /*
+      The SoundCloud iframe is kept loaded but visually hidden.
+      The custom interface above controls it through SoundCloud's
+      official Widget API.
+    */
+    #soundcloud-widget {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+      left: -9999px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      .player {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="player">
+
+    <div class="eyebrow">dj swordfish</div>
+
+    <div class="title">mixes</div>
+
+    <div class="track" id="track-name">
+      loading SoundCloud playlist…
+    </div>
+
+    <div class="progress-wrap">
+      <span id="current-time">0:00</span>
+
+      <input
+        id="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="0.1"
+        aria-label="Track progress">
+
+      <span id="duration">0:00</span>
+    </div>
+
+    <div class="controls">
+
+      <button
+        class="secondary"
+        id="previous"
+        type="button"
+        aria-label="Previous track">
+        ‹ prev
+      </button>
+
+      <button
+        class="play"
+        id="play"
+        type="button"
+        aria-label="Play">
+        ▶
+      </button>
+
+      <button
+        class="secondary"
+        id="next"
+        type="button"
+        aria-label="Next track">
+        next ›
+      </button>
+
+    </div>
+
+    <a
+      class="soundcloud-link"
+      href="https://soundcloud.com/dj-swordfish/sets/mixes"
+      target="_blank"
+      rel="noopener noreferrer">
+      listen on SoundCloud ↗
+    </a>
+
+    <div class="status" id="status">
+      connecting to SoundCloud…
+    </div>
+
+  </div>
+
+
+  <iframe
+    id="soundcloud-widget"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    title="SoundCloud player"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
+  </iframe>
+
+
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+
+  <script>
+    const iframe = document.getElementById("soundcloud-widget");
+    const widget = SC.Widget(iframe);
+
+    const playButton = document.getElementById("play");
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const progress = document.getElementById("progress");
+
+    const trackName = document.getElementById("track-name");
+    const currentTime = document.getElementById("current-time");
+    const duration = document.getElementById("duration");
+    const status = document.getElementById("status");
+
+    let isPlaying = false;
+    let currentDuration = 0;
+
+    function formatTime(milliseconds) {
+      const seconds = Math.floor(milliseconds / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+
+      return minutes + ":" + String(remainingSeconds).padStart(2, "0");
+    }
+
+    function updateTrack() {
+      widget.getCurrentSound(function(sound) {
+        if (sound) {
+          trackName.textContent = sound.title || "dj swordfish mix";
+          status.textContent = "SoundCloud playlist connected";
+        }
+      });
+    }
+
+    widget.bind(SC.Widget.Events.READY, function() {
+      status.textContent = "SoundCloud playlist connected";
+      updateTrack();
+    });
+
+    widget.bind(SC.Widget.Events.PLAY, function() {
+      isPlaying = true;
+      playButton.textContent = "Ⅱ";
+      updateTrack();
+    });
+
+    widget.bind(SC.Widget.Events.PAUSE, function() {
+      isPlaying = false;
+      playButton.textContent = "▶";
+    });
+
+    widget.bind(SC.Widget.Events.FINISH, function() {
+      isPlaying = false;
+      playButton.textContent = "▶";
+      progress.value = 100;
+      widget.next();
+    });
+
+    widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(event) {
+      if (!event) return;
+
+      currentDuration = event.relativePosition
+        ? event.currentPosition / event.relativePosition
+        : currentDuration;
+
+      if (currentDuration > 0) {
+        progress.value =
+          (event.currentPosition / currentDuration) * 100;
+      }
+
+      currentTime.textContent =
+        formatTime(event.currentPosition);
+
+      if (currentDuration > 0) {
+        duration.textContent =
+          formatTime(currentDuration);
+      }
+    });
+
+    playButton.addEventListener("click", function() {
+      if (isPlaying) {
+        widget.pause();
+      } else {
+        widget.play();
+      }
+    });
+
+    previousButton.addEventListener("click", function() {
+      widget.prev();
+      setTimeout(updateTrack, 300);
+    });
+
+    nextButton.addEventListener("click", function() {
+      widget.next();
+      setTimeout(updateTrack, 300);
+    });
+
+    progress.addEventListener("input", function() {
+      if (!currentDuration) return;
+
+      const position =
+        (Number(progress.value) / 100) * currentDuration;
+
+      widget.seekTo(position);
+    });
+  </script>
+
+</body>
+</html>
