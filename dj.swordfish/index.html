@@ -175,6 +175,10 @@
       padding-right: 80px;
     }
 
+    .genres-content:last-child span {
+      padding-right: 0;
+    }
+
     .genres:hover .genres-track {
       animation-play-state: paused;
     }
@@ -190,11 +194,30 @@
     }
 
 
+    /* IMAGE STRIP */
+
+    .image-strip {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .image-strip img {
+      width: 100%;
+      height: 34vw;
+      max-height: 520px;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+
     /* EVENTS */
 
     .events {
-      padding-top: 64px;
-      padding-bottom: 64px;
+      padding-top: 72px;
+      padding-bottom: 56px;
     }
 
     .events .name {
@@ -219,31 +242,13 @@
     /* CLIENTS */
 
     .clients {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
       font-family: "Azeret Mono", monospace;
       font-size: 1rem;
       line-height: 1.5;
       font-weight: 400;
       color: var(--muted);
-    }
-
-
-    /* IMAGE STRIP */
-
-    .image-strip {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 0;
-    }
-
-    .image-strip img {
-      width: 100%;
-      height: 34vw;
-      max-height: 520px;
-      min-height: 260px;
-      object-fit: cover;
     }
 
 
@@ -329,9 +334,23 @@
         padding-right: 60px;
       }
 
+      .genres-content:last-child span {
+        padding-right: 0;
+      }
+
+      .image-strip {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+      }
+
+      .image-strip img {
+        height: 52vw;
+        min-height: 190px;
+      }
+
       .events {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 52px;
+        padding-bottom: 46px;
       }
 
       .events-quote {
@@ -343,14 +362,8 @@
         min-height: 450px;
       }
 
-      .image-strip {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1px;
-      }
-
-      .image-strip img {
-        height: 52vw;
-        min-height: 190px;
+      .clients {
+        padding: 22px 0;
       }
 
       .enquiries {
@@ -443,6 +456,25 @@
     </div>
 
 
+  </main>
+
+
+  <!-- IMAGE STRIP -->
+
+  <div class="image-strip">
+
+    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
+
+    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
+
+    <img src="dj-red.jpg" alt="dj swordfish performing">
+
+  </div>
+
+
+  <main>
+
+
     <!-- EVENTS -->
 
     <section class="events">
@@ -472,24 +504,6 @@
     </div>
 
 
-  </main>
-
-
-  <!-- IMAGE STRIP -->
-
-  <div class="image-strip">
-
-    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
-
-    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
-
-    <img src="dj-red.jpg" alt="dj swordfish performing">
-
-  </div>
-
-
-  <main>
-
     <!-- ENQUIRIES -->
 
     <section class="enquiries">
@@ -505,6 +519,7 @@
       </a>
 
     </section>
+
 
   </main>
 
