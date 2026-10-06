@@ -49,9 +49,9 @@
 
     .hero {
       width: 100%;
-      height: 17vw;
-      min-height: 180px;
-      max-height: 280px;
+      height: 8vw;
+      min-height: 70px;
+      max-height: 120px;
       overflow: hidden;
     }
 
@@ -118,40 +118,35 @@
     }
 
 
-    /* CREDENTIALS */
+    /* GREY / MONO TEXT */
 
     .credentials {
       font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.5;
       font-weight: 400;
       color: var(--muted);
     }
 
 
-    /* IMAGE STRIP */
+    /* LISTEN */
 
-    .image-strip {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+    .listen {
+      padding: 0 0 72px;
     }
 
-    .image-strip img {
+    .soundcloud {
       width: 100%;
-      height: 34vw;
-      max-height: 520px;
-      min-height: 260px;
-      object-fit: cover;
+      min-height: 450px;
+      border: 0;
+      display: block;
     }
 
 
-    /* EVENTS */
+    /* EVENTS / DESCRIPTION */
 
     .events {
-      padding-top: 72px;
+      padding-top: 0;
       padding-bottom: 56px;
     }
 
@@ -173,34 +168,19 @@
     /* CLIENTS */
 
     .clients {
-      border-top: 1px solid var(--line);
-      padding: 26px 0;
+      padding: 26px 0 0;
       font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.5;
       font-weight: 400;
       color: var(--muted);
     }
 
 
-    /* LISTEN */
-
-    .listen {
-      padding: 72px 0 64px;
-    }
-
-    .soundcloud {
-      width: 100%;
-      min-height: 450px;
-      border: 0;
-      display: block;
-    }
-
-
     /* ENQUIRIES */
 
     .enquiries {
-      padding: 72px 0 100px;
+      padding: 72px 0 80px;
     }
 
     .enquiries h2 {
@@ -223,17 +203,36 @@
     }
 
 
+    /* IMAGE STRIP */
+
+    .image-strip {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .image-strip img {
+      width: 100%;
+      height: 34vw;
+      max-height: 520px;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+
     /* GENRE TICKER */
 
     .genres {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       overflow: hidden;
-      padding: 26px 0;
+      padding: 22px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
+      font-size: 0.85rem;
       line-height: 1.5;
       font-weight: 400;
       color: var(--muted);
@@ -292,9 +291,9 @@
       }
 
       .hero {
-        height: 25vw;
-        min-height: 100px;
-        max-height: 180px;
+        height: 15vw;
+        min-height: 55px;
+        max-height: 90px;
       }
 
       .identity {
@@ -310,10 +309,35 @@
       }
 
       .credentials,
-      .genres,
       .clients {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.5;
+      }
+
+      .listen {
+        padding-bottom: 52px;
+      }
+
+      .soundcloud {
+        min-height: 450px;
+      }
+
+      .events {
+        padding-top: 0;
+        padding-bottom: 46px;
+      }
+
+      .events-quote {
+        font-size: 1.05rem;
+        line-height: 1.5;
+      }
+
+      .clients {
+        padding-top: 22px;
+      }
+
+      .enquiries {
+        padding: 56px 0 64px;
       }
 
       .image-strip {
@@ -326,34 +350,9 @@
         min-height: 190px;
       }
 
-      .events {
-        padding-top: 52px;
-        padding-bottom: 46px;
-      }
-
-      .events-quote {
-        font-size: 1.05rem;
-        line-height: 1.5;
-      }
-
-      .listen {
-        padding: 52px 0 48px;
-      }
-
-      .soundcloud {
-        min-height: 450px;
-      }
-
-      .clients {
-        padding: 22px 0;
-      }
-
-      .enquiries {
-        padding: 56px 0 80px;
-      }
-
       .genres {
-        padding: 22px 0;
+        padding: 18px 0;
+        font-size: 0.75rem;
       }
 
       .genres-track {
@@ -413,25 +412,24 @@
 
     </section>
 
-  </main>
+
+    <!-- SOUNDcloud PLAYER -->
+
+    <section class="listen">
+
+      <iframe
+        class="soundcloud"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        title="dj swordfish mixes on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
+      </iframe>
+
+    </section>
 
 
-  <!-- IMAGE STRIP -->
-
-  <div class="image-strip">
-
-    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
-
-    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
-
-    <img src="dj-red.jpg" alt="dj swordfish performing">
-
-  </div>
-
-
-  <!-- EVENTS / CLIENTS -->
-
-  <main>
+    <!-- EVENTS -->
 
     <section class="events">
 
@@ -449,25 +447,11 @@
     </section>
 
 
+    <!-- CLIENTS -->
+
     <div class="clients">
       Clients: Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
     </div>
-
-
-    <!-- LISTEN -->
-
-    <section class="listen">
-
-      <iframe
-        class="soundcloud"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        title="dj swordfish mixes on SoundCloud"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
-      </iframe>
-
-    </section>
 
 
     <!-- ENQUIRIES -->
@@ -487,6 +471,19 @@
     </section>
 
   </main>
+
+
+  <!-- IMAGE STRIP -->
+
+  <div class="image-strip">
+
+    <img src="radio.jpg" alt="dj swordfish at Brixton Radio">
+
+    <img src="trumpet.jpg" alt="dj swordfish playing trumpet">
+
+    <img src="dj-red.jpg" alt="dj swordfish performing">
+
+  </div>
 
 
   <!-- GENRE TICKER -->
