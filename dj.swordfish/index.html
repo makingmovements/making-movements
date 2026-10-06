@@ -89,7 +89,7 @@
 
     .identity {
       padding-top: 76px;
-      padding-bottom: 72px;
+      padding-bottom: 56px;
     }
 
     .intro {
@@ -127,37 +127,10 @@
     }
 
 
-    /* GENRES */
-
-    .genres {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 26px 0;
-      font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-
-    /* CREDITS */
-
-    .credits {
-      border-bottom: 1px solid var(--line);
-      padding: 26px 0;
-      font-family: "Azeret Mono", monospace;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-
     /* LISTEN */
 
     .listen {
-      padding-top: 76px;
+      padding: 0 0 64px;
     }
 
     .soundcloud {
@@ -168,20 +141,72 @@
     }
 
 
-    /* EVENTS */
+    /* GENRE TICKER */
 
-    .events-list {
-      margin-bottom: 28px;
+    .genres {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-family: "Azeret Mono", monospace;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
     }
 
-    .events-copy {
-      max-width: 650px;
-      margin-bottom: 28px;
+    .genres-track {
+      display: flex;
+      width: max-content;
+      animation: genre-scroll 35s linear infinite;
+    }
+
+    .genres-content {
+      display: flex;
+      flex-shrink: 0;
+    }
+
+    .genres-content span {
+      display: block;
+      padding-right: 80px;
+    }
+
+    .genres:hover .genres-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes genre-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    /* EVENTS */
+
+    .events {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    .events .name {
+      margin: 0 0 24px;
+    }
+
+    .events .clients {
+      margin-bottom: 36px;
     }
 
     .events-quote {
       max-width: 720px;
-      margin: 48px 0 0;
+      margin: 0 0 36px;
       font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.1rem;
       line-height: 1.5;
@@ -189,12 +214,14 @@
       color: var(--text);
     }
 
+    .events .credentials {
+      margin: 0;
+    }
+
 
     /* CLIENTS */
 
     .clients {
-      border-bottom: 1px solid var(--line);
-      padding: 0 0 26px;
       font-family: "Azeret Mono", monospace;
       font-size: 1rem;
       line-height: 1.5;
@@ -211,7 +238,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      margin-top: 40px;
+      margin-top: 0;
     }
 
     .image-strip img {
@@ -226,7 +253,11 @@
     /* ENQUIRIES */
 
     .enquiries {
-      padding: 76px 0 100px;
+      padding: 72px 0 100px;
+    }
+
+    .enquiries h2 {
+      margin: 0 0 24px;
     }
 
     .email {
@@ -268,7 +299,7 @@
 
       .identity {
         padding-top: 58px;
-        padding-bottom: 58px;
+        padding-bottom: 46px;
       }
 
       .display-text,
@@ -280,10 +311,30 @@
 
       .credentials,
       .genres,
-      .credits,
       .clients {
         font-size: 0.95rem;
         line-height: 1.5;
+      }
+
+      .listen {
+        padding-bottom: 48px;
+      }
+
+      .genres {
+        padding: 22px 0;
+      }
+
+      .genres-track {
+        animation-duration: 28s;
+      }
+
+      .genres-content span {
+        padding-right: 60px;
+      }
+
+      .events {
+        padding-top: 50px;
+        padding-bottom: 50px;
       }
 
       .events-quote {
@@ -303,6 +354,10 @@
       .image-strip img {
         height: 52vw;
         min-height: 190px;
+      }
+
+      .enquiries {
+        padding: 56px 0 80px;
       }
     }
 
@@ -347,7 +402,12 @@
           Weddings, corporate and cultural events
         </p>
 
-           <!-- LISTEN -->
+      </div>
+
+    </section>
+
+
+    <!-- LISTEN -->
 
     <section class="listen">
 
@@ -360,33 +420,56 @@
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
       </iframe>
 
+    </section>
+
+
     <!-- GENRES -->
 
     <div class="genres">
-      Jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
-    </div> 
-              
+
+      <div class="genres-track">
+
+        <div class="genres-content">
+          <span>
+            Jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+          </span>
+        </div>
+
+        <div class="genres-content">
+          <span>
+            Jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
     <!-- EVENTS -->
 
     <section class="events">
 
-    <p class="name">
-      Events
-       </p>
- 
-     <div class="clients">
-       cultural · corporate · private parties · weddings · club · radio
+      <p class="name">
+        Events
+      </p>
+
+      <div class="clients">
+        cultural · corporate · private parties · weddings · club · radio
       </div>
 
       <p class="events-quote">
         “I love working with clients and venues to find the right sound. I’ve been collecting music my whole life, from dusty records to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
       </p>
 
-       <p class="credentials">
-        Tailored playlists for atmosphere and occasion <br> 
-        Curated moments, announcements, speeches, dances <br>
-        Complete sound and tech setup <br>
-      </div>
+      <p class="credentials">
+        Tailored playlists for atmosphere and occasion<br>
+        Curated moments, announcements, speeches, dances<br>
+        Complete sound and tech setup
+      </p>
+
+    </section>
+
 
     <!-- CLIENTS -->
 
@@ -394,7 +477,11 @@
       Clients: Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
     </div>
 
-      <!-- IMAGE STRIP -->
+
+  </main>
+
+
+  <!-- IMAGE STRIP -->
 
   <div class="image-strip">
 
@@ -404,14 +491,18 @@
 
     <img src="dj-red.jpg" alt="dj swordfish performing">
 
-  </div> 
+  </div>
+
+
   <main>
 
     <!-- ENQUIRIES -->
 
     <section class="enquiries">
 
-      <h2 class="display-text">Enquiries</h2>
+      <h2 class="display-text">
+        Enquiries
+      </h2>
 
       <a
         class="email"
@@ -422,6 +513,7 @@
     </section>
 
   </main>
+
 
 </body>
 </html>
