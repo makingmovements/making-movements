@@ -115,10 +115,10 @@
     }
 
 
-    /* QUOTE */
+    /* INTRODUCTORY BIO */
 
-    .quote {
-      padding: 72px 0 64px;
+    .bio {
+      padding: 72px 0 24px;
       max-width: 720px;
       font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.1rem;
@@ -128,20 +128,42 @@
     }
 
 
-    /* CLIENTS */
+    /* QUOTE */
 
-    .clients {
+    .quote {
+      padding: 0 0 64px;
+      max-width: 720px;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+
+    /* CLIENTS + EVENT TYPES */
+
+    .client-info {
       width: 100vw;
       margin-left: calc(50% - 50vw);
-      padding: 0 20px 52px;
-      overflow: hidden;
-      white-space: nowrap;
       text-align: center;
       font-family: "Azeret Mono", monospace;
       font-size: 0.95rem;
       line-height: 1.6;
       font-weight: 400;
       color: var(--muted);
+    }
+
+    .event-types {
+      padding: 0 20px 12px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .clients {
+      padding: 0 20px 52px;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
 
@@ -172,6 +194,25 @@
     }
 
     .email:hover {
+      opacity: 0.65;
+    }
+
+
+    /* INSTAGRAM */
+
+    .instagram {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.85rem;
+      line-height: 1;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+    }
+
+    .instagram:hover {
       opacity: 0.65;
     }
 
@@ -234,15 +275,27 @@
         min-height: 190px;
       }
 
+      .bio {
+        padding: 52px 0 20px;
+        font-size: 1.05rem;
+      }
+
       .quote {
-        padding: 52px 0 46px;
+        padding-bottom: 46px;
         font-size: 1.05rem;
         line-height: 1.5;
       }
 
+      .client-info {
+        font-size: 0.78rem;
+      }
+
+      .event-types {
+        padding: 0 14px 10px;
+      }
+
       .clients {
         padding: 0 14px 42px;
-        font-size: 0.78rem;
       }
 
       .enquiries {
@@ -252,6 +305,10 @@
       .enquiries-title,
       .email {
         font-size: 1.05rem;
+      }
+
+      .instagram {
+        font-size: 0.75rem;
       }
 
       .listen {
@@ -317,20 +374,35 @@
   <main>
 
 
-    <!-- QUOTE -->
+    <!-- NAME -->
+
+    <div class="bio">
+      <em>Jack Davies // dj swordfish</em>
+    </div>
+
+
+    <!-- BIO -->
 
     <div class="quote">
-      “I love working with clients and venues to find the right sound. I’ve been collecting music my whole life, from dusty records to new releases. It’s an adventure, and it’s a joy to share it with appreciative people.”
+      Jack’s sound is influenced by his work around the world. Adept at blending styles and genres, his sets are jazzy and soulful, sometimes naughty and never boring. Joy, connection, vocals, brass, bass and all things nice.
     </div>
 
 
   </main>
 
 
-  <!-- CLIENTS -->
+  <!-- EVENT TYPES + CLIENTS -->
 
-  <div class="clients">
-    Clients: Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
+  <div class="client-info">
+
+    <div class="event-types">
+      cultural · corporate · private · club
+    </div>
+
+    <div class="clients">
+      Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
+    </div>
+
   </div>
 
 
@@ -349,6 +421,16 @@
         class="email"
         href="mailto:contact@makingmovements.world">
         contact@makingmovements.world
+      </a>
+
+      <br>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/dj.swordfish/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Instagram ↗
       </a>
 
     </section>
