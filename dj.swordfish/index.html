@@ -127,6 +127,11 @@
       color: var(--text);
     }
 
+    .bio em {
+      color: #969691;
+      font-style: italic;
+    }
+
 
     /* INTRODUCTORY BIO */
 
@@ -166,8 +171,8 @@
     /* CLIENTS + EVENT TYPES */
 
     .client-info {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
       text-align: center;
       font-family: "Azeret Mono", monospace;
       font-size: 0.95rem;
@@ -177,15 +182,15 @@
     }
 
     .event-types {
-      padding: 0 20px 12px;
-      white-space: nowrap;
-      overflow: hidden;
+      padding: 0 0 12px;
+      white-space: normal;
     }
 
     .clients {
-      padding: 0 20px 52px;
-      white-space: nowrap;
-      overflow: hidden;
+      padding: 0 0 52px;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
 
@@ -242,7 +247,7 @@
     /* SOUNDCLOUD */
 
     .listen {
-      padding: 0 0 100px;
+      padding: 0;
     }
 
     .soundcloud {
@@ -250,6 +255,27 @@
       min-height: 450px;
       border: 0;
       display: block;
+    }
+
+
+    /* GENRE TICKER */
+
+    .ticker {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--bg);
+      color: var(--muted);
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.65rem;
+      line-height: 1.2;
+      padding: 3px 0;
+      margin: 0 0 28px;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      white-space: nowrap;
     }
 
 
@@ -314,15 +340,16 @@
       }
 
       .client-info {
+        width: min(calc(100% - 28px), var(--content));
         font-size: 0.78rem;
       }
 
       .event-types {
-        padding: 0 14px 10px;
+        padding-bottom: 10px;
       }
 
       .clients {
-        padding: 0 14px 42px;
+        padding-bottom: 42px;
       }
 
       .enquiries {
@@ -339,12 +366,19 @@
       }
 
       .listen {
-        padding-bottom: 70px;
+        padding-bottom: 0;
       }
 
       .soundcloud {
         min-height: 450px;
       }
+
+      .ticker {
+        font-size: 0.58rem;
+        padding: 3px 0;
+        margin-bottom: 22px;
+      }
+
     }
 
   </style>
@@ -375,8 +409,8 @@
       <p class="credentials">
         Brixton and Voices Radio resident<br>
         Live trumpet and session musician<br>
-        Multi-genre specialist<br>
-        +15 years experience
+        Podcaster and producer<br>
+        Multi-genre specialist
       </p>
 
     </section>
@@ -413,11 +447,11 @@
     <div class="intro-bio">
 
       <p>
-        Jack’s sound is influenced by his work around the world. His sets are jazzy and soulful, blending styles and genres, sometimes naughty and never boring.
+        Jack’s sound is influenced by his work around the world. His sets blend styles and genres, jazzy and soulful, sometimes naughty and never boring.
       </p>
 
       <p>
-        With a background in events and cultural programming in international development, Jack is adept at responding to a brief, working collaboratively and striking the right tone.
+        With a background in events and cultural programming, Jack is adept at responding to a brief, working collaboratively and striking the right tone.
       </p>
 
     </div>
@@ -442,7 +476,7 @@
     </div>
 
     <div class="clients">
-      · Capgemini · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
+      Idean · Sessions Arts Club · Studio Z · Wiper and True · Artspace · Good Life · Rum &amp; Bass · Aux Chords ·
     </div>
 
   </div>
@@ -492,6 +526,15 @@
       </iframe>
 
     </section>
+
+
+    <!-- GENRE TICKER -->
+
+    <div class="ticker">
+      <div class="ticker-track">
+        jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+      </div>
+    </div>
 
 
   </main>
