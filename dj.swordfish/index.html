@@ -15,9 +15,11 @@
 
     :root {
       --bg: #202020;
+      --panel: #292929;
       --text: #f1f1ed;
       --muted: #bdbdb8;
-      --line: #3b3b3b;
+      --name: #969691;
+      --line: #454545;
       --content: 820px;
     }
 
@@ -128,7 +130,7 @@
     }
 
     .bio em {
-      color: #969691;
+      color: var(--name);
       font-style: italic;
     }
 
@@ -244,17 +246,126 @@
     }
 
 
-    /* SOUNDCLOUD */
+    /* CUSTOM SOUNDCLOUD PLAYER */
 
     .listen {
-      padding: 0;
+      width: 100%;
+      padding: 0 0 100px;
     }
 
-    .soundcloud {
+    .player {
       width: 100%;
-      min-height: 450px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+
+    .eyebrow {
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .player-title {
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .track {
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--muted);
+      min-height: 24px;
+      margin-bottom: 28px;
+    }
+
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    input[type="range"] {
+      flex: 1;
+      accent-color: var(--text);
+      cursor: pointer;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 28px 0;
+    }
+
+    button {
+      appearance: none;
       border: 0;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      padding: 8px;
+    }
+
+    button:hover {
+      opacity: 0.65;
+    }
+
+    .play {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .secondary {
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.8rem;
+    }
+
+    .soundcloud-link {
       display: block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.7rem;
+      text-decoration: none;
+    }
+
+    .soundcloud-link:hover {
+      color: var(--text);
+    }
+
+    .status {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-family: "Azeret Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+
+    /* HIDDEN SOUNDCLOUD WIDGET */
+
+    #soundcloud-widget {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+      left: -9999px;
     }
 
 
@@ -270,7 +381,10 @@
       font-size: 0.65rem;
       line-height: 1.2;
       padding: 3px 0;
-      margin: 0 0 28px;
+      margin: 0;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .ticker-track {
@@ -383,17 +497,16 @@
       }
 
       .listen {
-        padding-bottom: 0;
+        padding-bottom: 70px;
       }
 
-      .soundcloud {
-        min-height: 450px;
+      .player {
+        padding: 24px 20px;
       }
 
       .ticker {
         font-size: 0.58rem;
         padding: 3px 0;
-        margin-bottom: 22px;
       }
 
     }
@@ -529,42 +642,295 @@
     </section>
 
 
-    <!-- SOUNDCLOUD -->
+    <!-- CUSTOM SOUNDCLOUD PLAYER + TICKER -->
 
     <section class="listen">
 
-      <iframe
-        class="soundcloud"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        title="dj swordfish mixes on SoundCloud"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;color=%23f1f1ed&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
-      </iframe>
+      <div class="player">
 
-    </section>
-
-
-    <!-- GENRE TICKER -->
-
-    <div class="ticker">
-
-      <div class="ticker-track">
-
-        <div class="ticker-content">
-          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+        <div class="eyebrow">
+          dj swordfish
         </div>
 
-        <div class="ticker-content">
-          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+        <div class="player-title">
+          mixes
+        </div>
+
+        <div class="track" id="track-name">
+          loading SoundCloud playlist…
+        </div>
+
+        <div class="progress-wrap">
+
+          <span id="current-time">
+            0:00
+          </span>
+
+          <input
+            id="progress"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            aria-label="Track progress">
+
+          <span id="duration">
+            0:00
+          </span>
+
+        </div>
+
+
+        <div class="controls">
+
+          <button
+            class="secondary"
+            id="previous"
+            type="button"
+            aria-label="Previous track">
+            ‹ prev
+          </button>
+
+          <button
+            class="play"
+            id="play"
+            type="button"
+            aria-label="Play">
+            ▶
+          </button>
+
+          <button
+            class="secondary"
+            id="next"
+            type="button"
+            aria-label="Next track">
+            next ›
+          </button>
+
+        </div>
+
+
+        <a
+          class="soundcloud-link"
+          href="https://soundcloud.com/dj-swordfish/sets/mixes"
+          target="_blank"
+          rel="noopener noreferrer">
+          listen on SoundCloud ↗
+        </a>
+
+
+        <div class="status" id="status">
+          connecting to SoundCloud…
         </div>
 
       </div>
 
-    </div>
+
+      <!-- GENRE TICKER -->
+
+      <div class="ticker">
+
+        <div class="ticker-track">
+
+          <div class="ticker-content">
+            jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+          </div>
+
+          <div class="ticker-content">
+            jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
 
 
   </main>
+
+
+  <!-- HIDDEN SOUNDCLOUD WIDGET -->
+
+  <iframe
+    id="soundcloud-widget"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    title="SoundCloud player"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj-swordfish/sets/mixes&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false">
+  </iframe>
+
+
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+
+  <script>
+
+    const iframe = document.getElementById("soundcloud-widget");
+    const widget = SC.Widget(iframe);
+
+    const playButton = document.getElementById("play");
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const progress = document.getElementById("progress");
+
+    const trackName = document.getElementById("track-name");
+    const currentTime = document.getElementById("current-time");
+    const duration = document.getElementById("duration");
+    const status = document.getElementById("status");
+
+    let isPlaying = false;
+    let currentDuration = 0;
+
+
+    function formatTime(milliseconds) {
+
+      const seconds = Math.floor(milliseconds / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+
+      return minutes + ":" + String(remainingSeconds).padStart(2, "0");
+
+    }
+
+
+    function updateTrack() {
+
+      widget.getCurrentSound(function(sound) {
+
+        if (sound) {
+
+          trackName.textContent =
+            sound.title || "dj swordfish mix";
+
+          status.textContent =
+            "SoundCloud playlist connected";
+
+        }
+
+      });
+
+    }
+
+
+    widget.bind(SC.Widget.Events.READY, function() {
+
+      status.textContent =
+        "SoundCloud playlist connected";
+
+      updateTrack();
+
+    });
+
+
+    widget.bind(SC.Widget.Events.PLAY, function() {
+
+      isPlaying = true;
+
+      playButton.textContent = "Ⅱ";
+
+      updateTrack();
+
+    });
+
+
+    widget.bind(SC.Widget.Events.PAUSE, function() {
+
+      isPlaying = false;
+
+      playButton.textContent = "▶";
+
+    });
+
+
+    widget.bind(SC.Widget.Events.FINISH, function() {
+
+      isPlaying = false;
+
+      playButton.textContent = "▶";
+
+      progress.value = 100;
+
+      widget.next();
+
+    });
+
+
+    widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(event) {
+
+      if (!event) return;
+
+      currentDuration = event.relativePosition
+        ? event.currentPosition / event.relativePosition
+        : currentDuration;
+
+      if (currentDuration > 0) {
+
+        progress.value =
+          (event.currentPosition / currentDuration) * 100;
+
+      }
+
+      currentTime.textContent =
+        formatTime(event.currentPosition);
+
+      if (currentDuration > 0) {
+
+        duration.textContent =
+          formatTime(currentDuration);
+
+      }
+
+    });
+
+
+    playButton.addEventListener("click", function() {
+
+      if (isPlaying) {
+
+        widget.pause();
+
+      } else {
+
+        widget.play();
+
+      }
+
+    });
+
+
+    previousButton.addEventListener("click", function() {
+
+      widget.prev();
+
+      setTimeout(updateTrack, 300);
+
+    });
+
+
+    nextButton.addEventListener("click", function() {
+
+      widget.next();
+
+      setTimeout(updateTrack, 300);
+
+    });
+
+
+    progress.addEventListener("input", function() {
+
+      if (!currentDuration) return;
+
+      const position =
+        (Number(progress.value) / 100) * currentDuration;
+
+      widget.seekTo(position);
+
+    });
+
+  </script>
 
 
   <!-- BOTTOM BANNER -->
