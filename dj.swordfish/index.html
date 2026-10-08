@@ -274,8 +274,25 @@
     }
 
     .ticker-track {
-      display: inline-block;
+      display: flex;
+      width: max-content;
       white-space: nowrap;
+      animation: ticker-scroll 35s linear infinite;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      padding-right: 4rem;
+    }
+
+    @keyframes ticker-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
 
@@ -451,7 +468,7 @@
       </p>
 
       <p>
-        With a background in events and cultural programming in the international development sector, Jack is adept at responding to a brief, working collaboratively and striking the right tone.
+        With a background in events and cultural programming, Jack is adept at responding to a brief, working collaboratively and striking the right tone.
       </p>
 
     </div>
@@ -531,9 +548,19 @@
     <!-- GENRE TICKER -->
 
     <div class="ticker">
+
       <div class="ticker-track">
-        jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab
+
+        <div class="ticker-content">
+          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+        </div>
+
+        <div class="ticker-content">
+          jazz · soul · disco · house · garage · broken beat · UK funky · hip hop · R&amp;B · indie · liquid · footwork · hyper · roots · rave · afro · latin · desi · arab ·
+        </div>
+
       </div>
+
     </div>
 
 
